@@ -1,0 +1,42 @@
+E:\JoseDeLosReyes\RQs\Proyectos Visual\IntegraServicios\GruposEtareos.BI\bin\Release\GruposEtareos.BI.dll.config
+E:\JoseDeLosReyes\RQs\Proyectos Visual\IntegraServicios\GruposEtareos.BI\bin\Release\GruposEtareos.BI.dll
+E:\JoseDeLosReyes\RQs\Proyectos Visual\IntegraServicios\GruposEtareos.BI\bin\Release\GruposEtareos.BI.pdb
+E:\JoseDeLosReyes\RQs\Proyectos Visual\IntegraServicios\GruposEtareos.BI\bin\Release\DataLayer.dll
+E:\JoseDeLosReyes\RQs\Proyectos Visual\IntegraServicios\GruposEtareos.BI\bin\Release\EntityFramework.dll
+E:\JoseDeLosReyes\RQs\Proyectos Visual\IntegraServicios\GruposEtareos.BI\bin\Release\EntityFramework.SqlServer.dll
+E:\JoseDeLosReyes\RQs\Proyectos Visual\IntegraServicios\GruposEtareos.BI\bin\Release\Microsoft.QualityTools.Testing.Fakes.dll
+E:\JoseDeLosReyes\RQs\Proyectos Visual\IntegraServicios\GruposEtareos.BI\bin\Release\EncriptarClaves.dll
+E:\JoseDeLosReyes\RQs\Proyectos Visual\IntegraServicios\GruposEtareos.BI\bin\Release\EntityFramework.xml
+E:\JoseDeLosReyes\RQs\Proyectos Visual\IntegraServicios\GruposEtareos.BI\bin\Release\EntityFramework.SqlServer.xml
+E:\JoseDeLosReyes\RQs\Proyectos Visual\IntegraServicios\GruposEtareos.BI\bin\Release\es\Microsoft.QualityTools.Testing.Fakes.resources.dll
+E:\JoseDeLosReyes\RQs\Proyectos Visual\IntegraServicios\GruposEtareos.BI\obj\Release\GruposEtareos.BI.csprojResolveAssemblyReference.cache
+E:\JoseDeLosReyes\RQs\Proyectos Visual\IntegraServicios\GruposEtareos.BI\obj\Release\GruposEtareos.BI.dll
+E:\JoseDeLosReyes\RQs\Proyectos Visual\IntegraServicios\GruposEtareos.BI\obj\Release\GruposEtareos.BI.pdb
+E:\JoseDeLosReyes\OtrosProyectos\Pruebas_GruposEtareos\slnPruebasGruposEtareos\GruposEtareos.BI\bin\Release\GruposEtareos.BI.dll.config
+E:\JoseDeLosReyes\OtrosProyectos\Pruebas_GruposEtareos\slnPruebasGruposEtareos\GruposEtareos.BI\bin\Release\GruposEtareos.BI.dll
+E:\JoseDeLosReyes\OtrosProyectos\Pruebas_GruposEtareos\slnPruebasGruposEtareos\GruposEtareos.BI\bin\Release\GruposEtareos.BI.pdb
+E:\JoseDeLosReyes\OtrosProyectos\Pruebas_GruposEtareos\slnPruebasGruposEtareos\GruposEtareos.BI\bin\Release\DataLayer.dll
+E:\JoseDeLosReyes\OtrosProyectos\Pruebas_GruposEtareos\slnPruebasGruposEtareos\GruposEtareos.BI\bin\Release\EntityFramework.dll
+E:\JoseDeLosReyes\OtrosProyectos\Pruebas_GruposEtareos\slnPruebasGruposEtareos\GruposEtareos.BI\bin\Release\EntityFramework.SqlServer.dll
+E:\JoseDeLosReyes\OtrosProyectos\Pruebas_GruposEtareos\slnPruebasGruposEtareos\GruposEtareos.BI\bin\Release\Microsoft.QualityTools.Testing.Fakes.dll
+E:\JoseDeLosReyes\OtrosProyectos\Pruebas_GruposEtareos\slnPruebasGruposEtareos\GruposEtareos.BI\bin\Release\EncriptarClaves.dll
+E:\JoseDeLosReyes\OtrosProyectos\Pruebas_GruposEtareos\slnPruebasGruposEtareos\GruposEtareos.BI\bin\Release\EntityFramework.xml
+E:\JoseDeLosReyes\OtrosProyectos\Pruebas_GruposEtareos\slnPruebasGruposEtareos\GruposEtareos.BI\bin\Release\EntityFramework.SqlServer.xml
+E:\JoseDeLosReyes\OtrosProyectos\Pruebas_GruposEtareos\slnPruebasGruposEtareos\GruposEtareos.BI\bin\Release\es\Microsoft.QualityTools.Testing.Fakes.resources.dll
+E:\JoseDeLosReyes\OtrosProyectos\Pruebas_GruposEtareos\slnPruebasGruposEtareos\GruposEtareos.BI\obj\Release\GruposEtareos.BI.csprojResolveAssemblyReference.cache
+E:\JoseDeLosReyes\OtrosProyectos\Pruebas_GruposEtareos\slnPruebasGruposEtareos\GruposEtareos.BI\obj\Release\GruposEtareos.BI.dll
+E:\JoseDeLosReyes\OtrosProyectos\Pruebas_GruposEtareos\slnPruebasGruposEtareos\GruposEtareos.BI\obj\Release\GruposEtareos.BI.pdb
+E:\JoseDeLosReyes\OtrosProyectos\Adm_Servicios\GE.App\GruposEtareos.BI\bin\Release\GruposEtareos.BI.dll.config
+E:\JoseDeLosReyes\OtrosProyectos\Adm_Servicios\GE.App\GruposEtareos.BI\bin\Release\GruposEtareos.BI.dll
+E:\JoseDeLosReyes\OtrosProyectos\Adm_Servicios\GE.App\GruposEtareos.BI\bin\Release\GruposEtareos.BI.pdb
+E:\JoseDeLosReyes\OtrosProyectos\Adm_Servicios\GE.App\GruposEtareos.BI\bin\Release\DataLayer.dll
+E:\JoseDeLosReyes\OtrosProyectos\Adm_Servicios\GE.App\GruposEtareos.BI\bin\Release\EntityFramework.dll
+E:\JoseDeLosReyes\OtrosProyectos\Adm_Servicios\GE.App\GruposEtareos.BI\bin\Release\EntityFramework.SqlServer.dll
+E:\JoseDeLosReyes\OtrosProyectos\Adm_Servicios\GE.App\GruposEtareos.BI\bin\Release\Microsoft.QualityTools.Testing.Fakes.dll
+E:\JoseDeLosReyes\OtrosProyectos\Adm_Servicios\GE.App\GruposEtareos.BI\bin\Release\EncriptarClaves.dll
+E:\JoseDeLosReyes\OtrosProyectos\Adm_Servicios\GE.App\GruposEtareos.BI\bin\Release\EntityFramework.xml
+E:\JoseDeLosReyes\OtrosProyectos\Adm_Servicios\GE.App\GruposEtareos.BI\bin\Release\EntityFramework.SqlServer.xml
+E:\JoseDeLosReyes\OtrosProyectos\Adm_Servicios\GE.App\GruposEtareos.BI\bin\Release\es\Microsoft.QualityTools.Testing.Fakes.resources.dll
+E:\JoseDeLosReyes\OtrosProyectos\Adm_Servicios\GE.App\GruposEtareos.BI\obj\Release\GruposEtareos.BI.csprojResolveAssemblyReference.cache
+E:\JoseDeLosReyes\OtrosProyectos\Adm_Servicios\GE.App\GruposEtareos.BI\obj\Release\GruposEtareos.BI.dll
+E:\JoseDeLosReyes\OtrosProyectos\Adm_Servicios\GE.App\GruposEtareos.BI\obj\Release\GruposEtareos.BI.pdb

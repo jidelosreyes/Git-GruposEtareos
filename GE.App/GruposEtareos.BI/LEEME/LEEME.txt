@@ -1,0 +1,1 @@
+Cuando se modifique el modelo del proyecto GruposEtareos.BI se debe reemplazar el archivo GruposEtareosModel.Context.cs por el que se encuentra en esta carpeta LEEME.

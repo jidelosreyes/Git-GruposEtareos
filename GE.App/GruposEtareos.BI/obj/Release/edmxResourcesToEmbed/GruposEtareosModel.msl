@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="GruposEtareosModelStoreContainer" CdmEntityContainer="GruposEtareosEntities">
+    <EntitySetMapping Name="GN_UNIDAD_MEDIDA">
+      <EntityTypeMapping TypeName="GruposEtareosModel.GN_UNIDAD_MEDIDA">
+        <MappingFragment StoreEntitySet="GN_UNIDAD_MEDIDA">
+          <ScalarProperty Name="ID_UNIDADMEDIDA" ColumnName="ID_UNIDADMEDIDA" />
+          <ScalarProperty Name="DESC_UNIDADMEDIDA" ColumnName="DESC_UNIDADMEDIDA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SEXOes">
+      <EntityTypeMapping TypeName="GruposEtareosModel.SEXO">
+        <MappingFragment StoreEntitySet="SEXO">
+          <ScalarProperty Name="APLICA_AFILIACION" ColumnName="APLICA_AFILIACION" />
+          <ScalarProperty Name="DESC_SEXO" ColumnName="DESC_SEXO" />
+          <ScalarProperty Name="COD_SEXO" ColumnName="COD_SEXO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PS_GRUPOS_ETAREOS">
+      <EntityTypeMapping TypeName="GruposEtareosModel.PS_GRUPOS_ETAREOS">
+        <MappingFragment StoreEntitySet="PS_GRUPOS_ETAREOS">
+          <ScalarProperty Name="COD_USUARIO" ColumnName="COD_USUARIO" />
+          <ScalarProperty Name="ESTADO_GRUPOETAREO" ColumnName="ESTADO_GRUPOETAREO" />
+          <ScalarProperty Name="DESC_GRUPOETAREO" ColumnName="DESC_GRUPOETAREO" />
+          <ScalarProperty Name="ID_UNIDADMEDIDA" ColumnName="ID_UNIDADMEDIDA" />
+          <ScalarProperty Name="EDAD_MAXIMA" ColumnName="EDAD_MAXIMA" />
+          <ScalarProperty Name="EDAD_MINIMA" ColumnName="EDAD_MINIMA" />
+          <ScalarProperty Name="COD_SEXO" ColumnName="COD_SEXO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GN_USUARIO_SISTEMA">
+      <EntityTypeMapping TypeName="GruposEtareosModel.GN_USUARIO_SISTEMA">
+        <MappingFragment StoreEntitySet="GN_USUARIO_SISTEMA">
+          <ScalarProperty Name="AUTORIZA_PGP" ColumnName="AUTORIZA_PGP" />
+          <ScalarProperty Name="ANULA_TUTELAS" ColumnName="ANULA_TUTELAS" />
+          <ScalarProperty Name="ANULA_ACTAS_CONCILIACION" ColumnName="ANULA_ACTAS_CONCILIACION" />
+          <ScalarProperty Name="COD_ROLE" ColumnName="COD_ROLE" />
+          <ScalarProperty Name="COORDINADOR_AC" ColumnName="COORDINADOR_AC" />
+          <ScalarProperty Name="MEDICO_AUDITOR" ColumnName="MEDICO_AUDITOR" />
+          <ScalarProperty Name="COD_SERVIDOR" ColumnName="COD_SERVIDOR" />
+          <ScalarProperty Name="ANULA_PRESTACIONES_ECONOMICAS" ColumnName="ANULA_PRESTACIONES_ECONOMICAS" />
+          <ScalarProperty Name="AUDITOR_FALLO_TUTELA" ColumnName="AUDITOR_FALLO_TUTELA" />
+          <ScalarProperty Name="USER_CALL_CENTER" ColumnName="USER_CALL_CENTER" />
+          <ScalarProperty Name="COD_CARGO" ColumnName="COD_CARGO" />
+          <ScalarProperty Name="Id_EstJerarquica" ColumnName="Id_EstJerarquica" />
+          <ScalarProperty Name="Atender_Caso_SNE" ColumnName="Atender_Caso_SNE" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="E_MAIL" ColumnName="E_MAIL" />
+          <ScalarProperty Name="COD_COBERTURA" ColumnName="COD_COBERTURA" />
+          <ScalarProperty Name="FIRMA" ColumnName="FIRMA" />
+          <ScalarProperty Name="ARCHIVO_FIRMA" ColumnName="ARCHIVO_FIRMA" />
+          <ScalarProperty Name="PROFESIONAL_AUTORIZA" ColumnName="PROFESIONAL_AUTORIZA" />
+          <ScalarProperty Name="COD_PLAN" ColumnName="COD_PLAN" />
+          <ScalarProperty Name="TIPO_USUARIO" ColumnName="TIPO_USUARIO" />
+          <ScalarProperty Name="COD_EPS" ColumnName="COD_EPS" />
+          <ScalarProperty Name="COD_REGIONAL" ColumnName="COD_REGIONAL" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="NIVEL_AUTORIZACION_3" ColumnName="NIVEL_AUTORIZACION_3" />
+          <ScalarProperty Name="COD_SEDE_IPS" ColumnName="COD_SEDE_IPS" />
+          <ScalarProperty Name="COD_IPS" ColumnName="COD_IPS" />
+          <ScalarProperty Name="CLAVE_USUARIO" ColumnName="CLAVE_USUARIO" />
+          <ScalarProperty Name="NOMBRE_USUARIO" ColumnName="NOMBRE_USUARIO" />
+          <ScalarProperty Name="COD_USUARIO" ColumnName="COD_USUARIO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GN_CLASIFIC_CONTABLE">
+      <EntityTypeMapping TypeName="GruposEtareosModel.GN_CLASIFIC_CONTABLE">
+        <MappingFragment StoreEntitySet="GN_CLASIFIC_CONTABLE">
+          <ScalarProperty Name="PRIORIDAD" ColumnName="PRIORIDAD" />
+          <ScalarProperty Name="COD_AMBITO" ColumnName="COD_AMBITO" />
+          <ScalarProperty Name="PUB_PARCIAL" ColumnName="PUB_PARCIAL" />
+          <ScalarProperty Name="PRIV_PARCIAL" ColumnName="PRIV_PARCIAL" />
+          <ScalarProperty Name="PRIV_EV" ColumnName="PRIV_EV" />
+          <ScalarProperty Name="PUB_CAP" ColumnName="PUB_CAP" />
+          <ScalarProperty Name="PRIV_CAP" ColumnName="PRIV_CAP" />
+          <ScalarProperty Name="DESC_CONTABLE" ColumnName="DESC_CONTABLE" />
+          <ScalarProperty Name="COD_CLASIF_CONTABLE" ColumnName="COD_CLASIF_CONTABLE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GN_CONCEPTOS_CONTABLES">
+      <EntityTypeMapping TypeName="GruposEtareosModel.GN_CONCEPTOS_CONTABLES">
+        <MappingFragment StoreEntitySet="GN_CONCEPTOS_CONTABLES">
+          <ScalarProperty Name="ESTADO_CONCEPTO" ColumnName="ESTADO_CONCEPTO" />
+          <ScalarProperty Name="CENTRO_COSTO_DET" ColumnName="CENTRO_COSTO_DET" />
+          <ScalarProperty Name="CENTRO_COSTO" ColumnName="CENTRO_COSTO" />
+          <ScalarProperty Name="PRIORIDAD" ColumnName="PRIORIDAD" />
+          <ScalarProperty Name="COD_CCONTABLE_NIVELAT" ColumnName="COD_CCONTABLE_NIVELAT" />
+          <ScalarProperty Name="COD_CCONTABLE_GERSALUD" ColumnName="COD_CCONTABLE_GERSALUD" />
+          <ScalarProperty Name="COD_CCONTABLE_COORD" ColumnName="COD_CCONTABLE_COORD" />
+          <ScalarProperty Name="COD_GRUPO_ACTIVIDAD" ColumnName="COD_GRUPO_ACTIVIDAD" />
+          <ScalarProperty Name="APLICA_PREDX_ESP" ColumnName="APLICA_PREDX_ESP" />
+          <ScalarProperty Name="APLICA_TUTELAS" ColumnName="APLICA_TUTELAS" />
+          <ScalarProperty Name="APLICA_RECOBROS" ColumnName="APLICA_RECOBROS" />
+          <ScalarProperty Name="TIPO_CONTRATO" ColumnName="TIPO_CONTRATO" />
+          <ScalarProperty Name="DESC_CONCEPTO_CONTABLE" ColumnName="DESC_CONCEPTO_CONTABLE" />
+          <ScalarProperty Name="CONCEPTO_CONTABLE" ColumnName="CONCEPTO_CONTABLE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GN_TIPO_SERVICIOS">
+      <EntityTypeMapping TypeName="GruposEtareosModel.GN_TIPO_SERVICIOS">
+        <MappingFragment StoreEntitySet="GN_TIPO_SERVICIOS">
+          <ScalarProperty Name="RES_1683" ColumnName="RES_1683" />
+          <ScalarProperty Name="EQU_INTERFAZ" ColumnName="EQU_INTERFAZ" />
+          <ScalarProperty Name="EQU_RECFOSYGA" ColumnName="EQU_RECFOSYGA" />
+          <ScalarProperty Name="EQU_CIRCULAR55" ColumnName="EQU_CIRCULAR55" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="COD_TIPO_SERVICIO" ColumnName="COD_TIPO_SERVICIO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GRUPOes">
+      <EntityTypeMapping TypeName="GruposEtareosModel.GRUPO">
+        <MappingFragment StoreEntitySet="GRUPO">
+          <ScalarProperty Name="CARGUE_AUT_MASIVA" ColumnName="CARGUE_AUT_MASIVA" />
+          <ScalarProperty Name="MOSTRARCONTRATACION" ColumnName="MOSTRARCONTRATACION" />
+          <ScalarProperty Name="MOSTRARCONTRATACIONARCHIVOPLANO" ColumnName="MOSTRARCONTRATACIONARCHIVOPLANO" />
+          <ScalarProperty Name="MANUAL_TARIFARIO" ColumnName="MANUAL_TARIFARIO" />
+          <ScalarProperty Name="ABRE_GRUPO" ColumnName="ABRE_GRUPO" />
+          <ScalarProperty Name="DESCR_GRUPO" ColumnName="DESCR_GRUPO" />
+          <ScalarProperty Name="COD_GRUPO" ColumnName="COD_GRUPO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NIVEL_COMPLEJIDAD">
+      <EntityTypeMapping TypeName="GruposEtareosModel.NIVEL_COMPLEJIDAD">
+        <MappingFragment StoreEntitySet="NIVEL_COMPLEJIDAD">
+          <ScalarProperty Name="COD_GRADO_COMPLEJIDAD" ColumnName="COD_GRADO_COMPLEJIDAD" />
+          <ScalarProperty Name="DESC_NIVEL_COMPL" ColumnName="DESC_NIVEL_COMPL" />
+          <ScalarProperty Name="COD_NIVEL_COMPL" ColumnName="COD_NIVEL_COMPL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SUB_GRUPO">
+      <EntityTypeMapping TypeName="GruposEtareosModel.SUB_GRUPO">
+        <MappingFragment StoreEntitySet="SUB_GRUPO">
+          <ScalarProperty Name="ABRE_SUBGRUPO" ColumnName="ABRE_SUBGRUPO" />
+          <ScalarProperty Name="DESCR_SUBGRUPO" ColumnName="DESCR_SUBGRUPO" />
+          <ScalarProperty Name="COD_GRUPO" ColumnName="COD_GRUPO" />
+          <ScalarProperty Name="COD_SUBGRUPO" ColumnName="COD_SUBGRUPO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DIAGNOSTICOS">
+      <EntityTypeMapping TypeName="GruposEtareosModel.DIAGNOSTICO">
+        <MappingFragment StoreEntitySet="DIAGNOSTICOS">
+          <ScalarProperty Name="Cod_Sub_Grupo" ColumnName="Cod_Sub_Grupo" />
+          <ScalarProperty Name="Aplica_Infrenal" ColumnName="Aplica_Infrenal" />
+          <ScalarProperty Name="COD_GRUPO_SP" ColumnName="COD_GRUPO_SP" />
+          <ScalarProperty Name="COD_ESPECIALIDAD" ColumnName="COD_ESPECIALIDAD" />
+          <ScalarProperty Name="IND_COBRO_COPAGO" ColumnName="IND_COBRO_COPAGO" />
+          <ScalarProperty Name="SUBCATEGORIA" ColumnName="SUBCATEGORIA" />
+          <ScalarProperty Name="CATEGORIA" ColumnName="CATEGORIA" />
+          <ScalarProperty Name="CAPITULO" ColumnName="CAPITULO" />
+          <ScalarProperty Name="EDAD_MAXIMA" ColumnName="EDAD_MAXIMA" />
+          <ScalarProperty Name="EDAD_MINIMA" ColumnName="EDAD_MINIMA" />
+          <ScalarProperty Name="SEXO" ColumnName="SEXO" />
+          <ScalarProperty Name="ABREVIAT" ColumnName="ABREVIAT" />
+          <ScalarProperty Name="DESCR_DIAGNOSTICO" ColumnName="DESCR_DIAGNOSTICO" />
+          <ScalarProperty Name="DIAGNOSTICO1" ColumnName="DIAGNOSTICO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GN_PLANES">
+      <EntityTypeMapping TypeName="GruposEtareosModel.GN_PLANES">
+        <MappingFragment StoreEntitySet="GN_PLANES">
+          <ScalarProperty Name="COD_PLAN_NORMA" ColumnName="COD_PLAN_NORMA" />
+          <ScalarProperty Name="RES_744_2012" ColumnName="RES_744_2012" />
+          <ScalarProperty Name="ABREVIAT" ColumnName="ABREVIAT" />
+          <ScalarProperty Name="DESC_PLAN" ColumnName="DESC_PLAN" />
+          <ScalarProperty Name="COD_PLAN" ColumnName="COD_PLAN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GN_TIPO_TECNOLOGIA">
+      <EntityTypeMapping TypeName="GruposEtareosModel.GN_TIPO_TECNOLOGIA">
+        <MappingFragment StoreEntitySet="GN_TIPO_TECNOLOGIA">
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="COD_TIPO_SERVICIO" ColumnName="COD_TIPO_SERVICIO" />
+          <ScalarProperty Name="DESCRIPCION_SERVICIO" ColumnName="DESCRIPCION_SERVICIO" />
+          <ScalarProperty Name="COD_NORMATIVO" ColumnName="COD_NORMATIVO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PS_CLASIFICACION_POS">
+      <EntityTypeMapping TypeName="GruposEtareosModel.PS_CLASIFICACION_POS">
+        <MappingFragment StoreEntitySet="PS_CLASIFICACION_POS">
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SV_ESTADO_SERVICIOS">
+      <EntityTypeMapping TypeName="GruposEtareosModel.SV_ESTADO_SERVICIOS">
+        <MappingFragment StoreEntitySet="SV_ESTADO_SERVICIOS">
+          <ScalarProperty Name="DECRIPCION" ColumnName="DECRIPCION" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SV_PROFESIONAL_AUTORIZA">
+      <EntityTypeMapping TypeName="GruposEtareosModel.SV_PROFESIONAL_AUTORIZA">
+        <MappingFragment StoreEntitySet="SV_PROFESIONAL_AUTORIZA">
+          <ScalarProperty Name="PYP_412" ColumnName="PYP_412" />
+          <ScalarProperty Name="DESC_PROFESIONAL_AUTORIZA" ColumnName="DESC_PROFESIONAL_AUTORIZA" />
+          <ScalarProperty Name="PROFESIONAL_AUTORIZA" ColumnName="PROFESIONAL_AUTORIZA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="P_CONSULTAR_SUB_GRUPO_X_FILTRO" FunctionName="GruposEtareosModel.Store.P_CONSULTAR_SUB_GRUPO_X_FILTRO">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GruposEtareosModel.P_CONSULTAR_SUB_GRUPO_X_FILTRO_Result">
+          <ScalarProperty Name="cod_grupo" ColumnName="cod_grupo" />
+          <ScalarProperty Name="cod_subgrupo" ColumnName="cod_subgrupo" />
+          <ScalarProperty Name="descr_subgrupo" ColumnName="descr_subgrupo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="GN_NIVEL_AUTORIZ">
+      <EntityTypeMapping TypeName="GruposEtareosModel.GN_NIVEL_AUTORIZ">
+        <MappingFragment StoreEntitySet="GN_NIVEL_AUTORIZ">
+          <ScalarProperty Name="PYP_412" ColumnName="PYP_412" />
+          <ScalarProperty Name="DESC_USUARIO" ColumnName="DESC_USUARIO" />
+          <ScalarProperty Name="DESC_AUTORIZACION" ColumnName="DESC_AUTORIZACION" />
+          <ScalarProperty Name="NIVEL_AUTORIZACION" ColumnName="NIVEL_AUTORIZACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PS_CONDICIONES">
+      <EntityTypeMapping TypeName="GruposEtareosModel.PS_CONDICIONES">
+        <MappingFragment StoreEntitySet="PS_CONDICIONES">
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PS_POS_CONDICIONADO">
+      <EntityTypeMapping TypeName="GruposEtareosModel.PS_POS_CONDICIONADO">
+        <MappingFragment StoreEntitySet="PS_POS_CONDICIONADO">
+          <ScalarProperty Name="MENSAJE_INFORMATIVO" ColumnName="MENSAJE_INFORMATIVO" />
+          <ScalarProperty Name="CANTIDAD" ColumnName="CANTIDAD" />
+          <ScalarProperty Name="DIAGNOSTICO" ColumnName="DIAGNOSTICO" />
+          <ScalarProperty Name="ID_PS_GRUPOS_ETAREOS" ColumnName="ID_PS_GRUPOS_ETAREOS" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PS_SERVICIOS">
+      <EntityTypeMapping TypeName="GruposEtareosModel.PS_SERVICIOS">
+        <MappingFragment StoreEntitySet="PS_SERVICIOS">
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="EXCLUIRVALIDACION" ColumnName="EXCLUIRVALIDACION" />
+          <ScalarProperty Name="APLICA_CUOTAMODERADORA" ColumnName="APLICA_CUOTAMODERADORA" />
+          <ScalarProperty Name="APLICA_COPAGO" ColumnName="APLICA_COPAGO" />
+          <ScalarProperty Name="PROFESIONAL_AUTORIZA" ColumnName="PROFESIONAL_AUTORIZA" />
+          <ScalarProperty Name="REVISION_DIAGNOSTICOS" ColumnName="REVISION_DIAGNOSTICOS" />
+          <ScalarProperty Name="VALOR_VARIABLE" ColumnName="VALOR_VARIABLE" />
+          <ScalarProperty Name="DIAS_MAX_AUTORIZADOS" ColumnName="DIAS_MAX_AUTORIZADOS" />
+          <ScalarProperty Name="AUTORIZACION_INICIAL" ColumnName="AUTORIZACION_INICIAL" />
+          <ScalarProperty Name="DIAS_EXPIRACION" ColumnName="DIAS_EXPIRACION" />
+          <ScalarProperty Name="MAXIMOXORDEN" ColumnName="MAXIMOXORDEN" />
+          <ScalarProperty Name="PERIODO_TOPE_MAXIMO" ColumnName="PERIODO_TOPE_MAXIMO" />
+          <ScalarProperty Name="PERIODO_UTILIZACION_MAXIMA" ColumnName="PERIODO_UTILIZACION_MAXIMA" />
+          <ScalarProperty Name="UTILIZACION_MAXIMA" ColumnName="UTILIZACION_MAXIMA" />
+          <ScalarProperty Name="COD_SEXO" ColumnName="COD_SEXO" />
+          <ScalarProperty Name="EDAD_MAXIMA" ColumnName="EDAD_MAXIMA" />
+          <ScalarProperty Name="EDAD_MINIMA" ColumnName="EDAD_MINIMA" />
+          <ScalarProperty Name="NIVEL_AUTORIZACION" ColumnName="NIVEL_AUTORIZACION" />
+          <ScalarProperty Name="CODIGO_IUM" ColumnName="CODIGO_IUM" />
+          <ScalarProperty Name="AUTORIZACION_RELACIONADA" ColumnName="AUTORIZACION_RELACIONADA" />
+          <ScalarProperty Name="ID_TECNOLOGIA" ColumnName="ID_TECNOLOGIA" />
+          <ScalarProperty Name="VITAL_DISPONIBLE" ColumnName="VITAL_DISPONIBLE" />
+          <ScalarProperty Name="FORMULA_MAGISTRAL" ColumnName="FORMULA_MAGISTRAL" />
+          <ScalarProperty Name="OBSERVACIONES" ColumnName="OBSERVACIONES" />
+          <ScalarProperty Name="CUM" ColumnName="CUM" />
+          <ScalarProperty Name="ID_ESTADO_SERVICIOS" ColumnName="ID_ESTADO_SERVICIOS" />
+          <ScalarProperty Name="COD_TIPO_SERVICIO" ColumnName="COD_TIPO_SERVICIO" />
+          <ScalarProperty Name="REGISTRO_SANITARIO" ColumnName="REGISTRO_SANITARIO" />
+          <ScalarProperty Name="COMPLEJIDAD" ColumnName="COMPLEJIDAD" />
+          <ScalarProperty Name="COD_ENTIDADSP" ColumnName="COD_ENTIDADSP" />
+          <ScalarProperty Name="COD_CONCEPTOC_CAPITA" ColumnName="COD_CONCEPTOC_CAPITA" />
+          <ScalarProperty Name="COD_CONCEPTOC_EVENTO" ColumnName="COD_CONCEPTOC_EVENTO" />
+          <ScalarProperty Name="APLICA_ESPECIALIDAD" ColumnName="APLICA_ESPECIALIDAD" />
+          <ScalarProperty Name="COD_CLASIF_CONTABLE" ColumnName="COD_CLASIF_CONTABLE" />
+          <ScalarProperty Name="COD_ENTIDAD" ColumnName="COD_ENTIDAD" />
+          <ScalarProperty Name="ABREVIATURA" ColumnName="ABREVIATURA" />
+          <ScalarProperty Name="DESCR_SERVICIO" ColumnName="DESCR_SERVICIO" />
+          <ScalarProperty Name="COD_SUBGRUPO" ColumnName="COD_SUBGRUPO" />
+          <ScalarProperty Name="COD_GRUPO" ColumnName="COD_GRUPO" />
+          <ScalarProperty Name="COD_SERVICIO" ColumnName="COD_SERVICIO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GN_ADMINXREGIONAL">
+      <EntityTypeMapping TypeName="GruposEtareosModel.GN_ADMINXREGIONAL">
+        <MappingFragment StoreEntitySet="GN_ADMINXREGIONAL">
+          <ScalarProperty Name="CONTRATO_MUNICIPIO" ColumnName="CONTRATO_MUNICIPIO" />
+          <ScalarProperty Name="COD_PLAN" ColumnName="COD_PLAN" />
+          <ScalarProperty Name="COD_REGIONAL" ColumnName="COD_REGIONAL" />
+          <ScalarProperty Name="COD_EPS" ColumnName="COD_EPS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="P_PS_CONSULTAR_TIPO_TECNOLOGIA" FunctionName="GruposEtareosModel.Store.P_PS_CONSULTAR_TIPO_TECNOLOGIA">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GruposEtareosModel.P_PS_CONSULTAR_TIPO_TECNOLOGIA_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="COD_NORMATIVO" ColumnName="COD_NORMATIVO" />
+          <ScalarProperty Name="DESCRIPCION_SERVICIO" ColumnName="DESCRIPCION_SERVICIO" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="PS_DETALLE_SERVICIOS">
+      <EntityTypeMapping TypeName="GruposEtareosModel.PS_DETALLE_SERVICIOS">
+        <MappingFragment StoreEntitySet="PS_DETALLE_SERVICIOS">
+          <ScalarProperty Name="COD_USUARIO" ColumnName="COD_USUARIO" />
+          <ScalarProperty Name="ID_PS_CLASIFICACION_POS" ColumnName="ID_PS_CLASIFICACION_POS" />
+          <ScalarProperty Name="ID_PS_POS_CONDICIONADO" ColumnName="ID_PS_POS_CONDICIONADO" />
+          <ScalarProperty Name="COD_REGIONAL" ColumnName="COD_REGIONAL" />
+          <ScalarProperty Name="COD_EPS" ColumnName="COD_EPS" />
+          <ScalarProperty Name="COD_PLAN" ColumnName="COD_PLAN" />
+          <ScalarProperty Name="COD_SUBGRUPO" ColumnName="COD_SUBGRUPO" />
+          <ScalarProperty Name="COD_GRUPO" ColumnName="COD_GRUPO" />
+          <ScalarProperty Name="COD_SERVICIO" ColumnName="COD_SERVICIO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

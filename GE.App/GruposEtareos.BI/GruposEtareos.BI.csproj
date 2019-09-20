@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6B0B4F67-0BEB-4D1C-BBDC-53DBD6A64272}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GruposEtareos.BI</RootNamespace>
+    <AssemblyName>GruposEtareos.BI</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DataLayer">
+      <HintPath>..\..\..\..\..\..\LaCuna\inetpub\wwwroot2010\IntegraARS\bin\DataLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DIAGNOSTICO.cs">
+      <DependentUpon>GruposEtareosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFConnectionStringDynamic.cs" />
+    <Compile Include="EntitiesAditional\PS_ClasificacionServicios.cs" />
+    <Compile Include="GN_ADMINXREGIONAL.cs">
+      <DependentUpon>GruposEtareosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GN_CLASIFIC_CONTABLE.cs">
+      <DependentUpon>GruposEtareosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GN_CONCEPTOS_CONTABLES.cs">
+      <DependentUpon>GruposEtareosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GN_NIVEL_AUTORIZ.cs">
+      <DependentUpon>GruposEtareosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GN_PLANES.cs">
+      <DependentUpon>GruposEtareosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GN_TIPO_SERVICIOS.cs">
+      <DependentUpon>GruposEtareosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GN_TIPO_TECNOLOGIA.cs">
+      <DependentUpon>GruposEtareosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GN_UNIDAD_MEDIDA.cs">
+      <DependentUpon>GruposEtareosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GN_USUARIO_SISTEMA.cs">
+      <DependentUpon>GruposEtareosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GRUPO.cs">
+      <DependentUpon>GruposEtareosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GruposEtareosModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GruposEtareosModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GruposEtareosModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GruposEtareosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GruposEtareosModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GruposEtareosModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="NIVEL_COMPLEJIDAD.cs">
+      <DependentUpon>GruposEtareosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PS_CLASIFICACION_POS.cs">
+      <DependentUpon>GruposEtareosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PS_CONDICIONES.cs">
+      <DependentUpon>GruposEtareosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PS_DETALLE_SERVICIOS.cs">
+      <DependentUpon>GruposEtareosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PS_GRUPOS_ETAREOS.cs">
+      <DependentUpon>GruposEtareosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PS_POS_CONDICIONADO.cs">
+      <DependentUpon>GruposEtareosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PS_SERVICIOS.cs">
+      <DependentUpon>GruposEtareosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="P_CONSULTAR_SUB_GRUPO_X_FILTRO_Result.cs">
+      <DependentUpon>GruposEtareosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="P_PS_CONSULTAR_TIPO_TECNOLOGIA_Result.cs">
+      <DependentUpon>GruposEtareosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SEXO.cs">
+      <DependentUpon>GruposEtareosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SUB_GRUPO.cs">
+      <DependentUpon>GruposEtareosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SV_ESTADO_SERVICIOS.cs">
+      <DependentUpon>GruposEtareosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SV_PROFESIONAL_AUTORIZA.cs">
+      <DependentUpon>GruposEtareosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UtilityEntities.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="GruposEtareosModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>GruposEtareosModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="GruposEtareosModel.edmx.diagram">
+      <DependentUpon>GruposEtareosModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GruposEtareosModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GruposEtareosModel.edmx</DependentUpon>
+      <LastGenOutput>GruposEtareosModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="GruposEtareosModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GruposEtareosModel.edmx</DependentUpon>
+      <LastGenOutput>GruposEtareosModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

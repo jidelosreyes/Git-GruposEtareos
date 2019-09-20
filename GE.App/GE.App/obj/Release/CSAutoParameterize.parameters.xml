@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="GruposEtareos.BI.GruposEtareosEntities-Web.config Connection String" description="GruposEtareos.BI.GruposEtareosEntities Cadena de conexión que usa la aplicación en web.config para obtener acceso a la base de datos." defaultValue="GruposEtareos.BI.GruposEtareosEntities_ConnectionString" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="E:\\JoseDeLosReyes\\OtrosProyectos\\Adm_Servicios\\GE\.App\\GE\.App\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='GruposEtareos.BI.GruposEtareosEntities']/@connectionString" />
+  </parameter>
+</parameters>

@@ -1,0 +1,1889 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="GruposEtareosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="DIAGNOSTICOS">
+          <Key>
+            <PropertyRef Name="DIAGNOSTICO" />
+          </Key>
+          <Property Name="DIAGNOSTICO" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="DESCR_DIAGNOSTICO" Type="char" MaxLength="254" Nullable="false" />
+          <Property Name="ABREVIAT" Type="varchar" MaxLength="20" />
+          <Property Name="SEXO" Type="char" MaxLength="1" />
+          <Property Name="EDAD_MINIMA" Type="smallint" />
+          <Property Name="EDAD_MAXIMA" Type="smallint" />
+          <Property Name="CAPITULO" Type="char" MaxLength="3" />
+          <Property Name="CATEGORIA" Type="char" MaxLength="3" />
+          <Property Name="SUBCATEGORIA" Type="char" MaxLength="3" />
+          <Property Name="IND_COBRO_COPAGO" Type="char" MaxLength="1" />
+          <Property Name="COD_ESPECIALIDAD" Type="char" MaxLength="18" Nullable="false" />
+          <Property Name="COD_GRUPO_SP" Type="smallint" />
+          <Property Name="Aplica_Infrenal" Type="char" MaxLength="1" />
+          <Property Name="Cod_Sub_Grupo" Type="char" MaxLength="6" />
+        </EntityType>
+        <EntityType Name="GN_ADMINXREGIONAL">
+          <Key>
+            <PropertyRef Name="COD_EPS" />
+            <PropertyRef Name="COD_REGIONAL" />
+            <PropertyRef Name="COD_PLAN" />
+          </Key>
+          <Property Name="COD_EPS" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="COD_REGIONAL" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="COD_PLAN" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="CONTRATO_MUNICIPIO" Type="char" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="GN_CLASIFIC_CONTABLE">
+          <Key>
+            <PropertyRef Name="COD_CLASIF_CONTABLE" />
+          </Key>
+          <Property Name="COD_CLASIF_CONTABLE" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="DESC_CONTABLE" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PRIV_CAP" Type="char" MaxLength="12" />
+          <Property Name="PUB_CAP" Type="char" MaxLength="12" />
+          <Property Name="PRIV_EV" Type="char" MaxLength="12" />
+          <Property Name="PRIV_PARCIAL" Type="char" MaxLength="12" />
+          <Property Name="PUB_PARCIAL" Type="char" MaxLength="12" />
+          <Property Name="COD_AMBITO" Type="char" MaxLength="1" />
+          <Property Name="PRIORIDAD" Type="int" />
+        </EntityType>
+        <EntityType Name="GN_CONCEPTOS_CONTABLES">
+          <Key>
+            <PropertyRef Name="CONCEPTO_CONTABLE" />
+          </Key>
+          <Property Name="CONCEPTO_CONTABLE" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="DESC_CONCEPTO_CONTABLE" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="TIPO_CONTRATO" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="APLICA_RECOBROS" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="APLICA_TUTELAS" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="APLICA_PREDX_ESP" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="COD_GRUPO_ACTIVIDAD" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="COD_CCONTABLE_COORD" Type="int" />
+          <Property Name="COD_CCONTABLE_GERSALUD" Type="int" />
+          <Property Name="COD_CCONTABLE_NIVELAT" Type="int" />
+          <Property Name="PRIORIDAD" Type="smallint" Nullable="false" />
+          <Property Name="CENTRO_COSTO" Type="char" MaxLength="18" />
+          <Property Name="CENTRO_COSTO_DET" Type="char" MaxLength="10" />
+          <Property Name="ESTADO_CONCEPTO" Type="char" MaxLength="1" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GN_NIVEL_AUTORIZ">
+          <Key>
+            <PropertyRef Name="NIVEL_AUTORIZACION" />
+          </Key>
+          <Property Name="NIVEL_AUTORIZACION" Type="int" Nullable="false" />
+          <Property Name="DESC_AUTORIZACION" Type="varchar" MaxLength="50" />
+          <Property Name="DESC_USUARIO" Type="varchar" MaxLength="50" />
+          <Property Name="PYP_412" Type="bit" />
+        </EntityType>
+        <EntityType Name="GN_PLANES">
+          <Key>
+            <PropertyRef Name="COD_PLAN" />
+          </Key>
+          <Property Name="COD_PLAN" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="DESC_PLAN" Type="varchar" MaxLength="40" />
+          <Property Name="ABREVIAT" Type="varchar" MaxLength="10" />
+          <Property Name="RES_744_2012" Type="varchar" MaxLength="2" />
+          <Property Name="COD_PLAN_NORMA" Type="int" />
+        </EntityType>
+        <EntityType Name="GN_TIPO_SERVICIOS">
+          <Key>
+            <PropertyRef Name="COD_TIPO_SERVICIO" />
+          </Key>
+          <Property Name="COD_TIPO_SERVICIO" Type="smallint" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="EQU_CIRCULAR55" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="EQU_RECFOSYGA" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="EQU_INTERFAZ" Type="nchar" MaxLength="10" />
+          <Property Name="RES_1683" Type="varchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="GN_TIPO_TECNOLOGIA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="COD_NORMATIVO" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="DESCRIPCION_SERVICIO" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="COD_TIPO_SERVICIO" Type="smallint" Nullable="false" />
+          <Property Name="ESTADO" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GN_UNIDAD_MEDIDA">
+          <Key>
+            <PropertyRef Name="ID_UNIDADMEDIDA" />
+          </Key>
+          <Property Name="ID_UNIDADMEDIDA" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DESC_UNIDADMEDIDA" Type="varchar" MaxLength="250" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GN_USUARIO_SISTEMA">
+          <Key>
+            <PropertyRef Name="COD_USUARIO" />
+          </Key>
+          <Property Name="COD_USUARIO" Type="char" MaxLength="18" Nullable="false" />
+          <Property Name="NOMBRE_USUARIO" Type="char" MaxLength="40" Nullable="false" />
+          <Property Name="CLAVE_USUARIO" Type="varchar" MaxLength="1000" />
+          <Property Name="COD_IPS" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="COD_SEDE_IPS" Type="char" MaxLength="4" Nullable="false" />
+          <Property Name="NIVEL_AUTORIZACION_3" Type="int" Nullable="false" />
+          <Property Name="ESTADO" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="COD_REGIONAL" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="COD_EPS" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="TIPO_USUARIO" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="COD_PLAN" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="PROFESIONAL_AUTORIZA" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="ARCHIVO_FIRMA" Type="varchar" MaxLength="25" />
+          <Property Name="FIRMA" Type="image" />
+          <Property Name="COD_COBERTURA" Type="char" MaxLength="2" />
+          <Property Name="E_MAIL" Type="varchar" MaxLength="50" />
+          <Property Name="Telefono" Type="varchar" MaxLength="30" />
+          <Property Name="Atender_Caso_SNE" Type="bit" />
+          <Property Name="Id_EstJerarquica" Type="int" />
+          <Property Name="COD_CARGO" Type="int" Nullable="false" />
+          <Property Name="USER_CALL_CENTER" Type="char" MaxLength="1" />
+          <Property Name="AUDITOR_FALLO_TUTELA" Type="bit" Nullable="false" />
+          <Property Name="ANULA_PRESTACIONES_ECONOMICAS" Type="bit" Nullable="false" />
+          <Property Name="COD_SERVIDOR" Type="smallint" Nullable="false" />
+          <Property Name="MEDICO_AUDITOR" Type="bit" />
+          <Property Name="COORDINADOR_AC" Type="bit" />
+          <Property Name="COD_ROLE" Type="int" />
+          <Property Name="ANULA_ACTAS_CONCILIACION" Type="bit" />
+          <Property Name="ANULA_TUTELAS" Type="bit" />
+          <Property Name="AUTORIZA_PGP" Type="bit" />
+        </EntityType>
+        <EntityType Name="GRUPO">
+          <Key>
+            <PropertyRef Name="COD_GRUPO" />
+          </Key>
+          <Property Name="COD_GRUPO" Type="char" MaxLength="18" Nullable="false" />
+          <Property Name="DESCR_GRUPO" Type="char" MaxLength="100" />
+          <Property Name="ABRE_GRUPO" Type="char" MaxLength="20" />
+          <Property Name="MANUAL_TARIFARIO" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="MOSTRARCONTRATACIONARCHIVOPLANO" Type="int" />
+          <Property Name="MOSTRARCONTRATACION" Type="int" />
+          <Property Name="CARGUE_AUT_MASIVA" Type="bit" />
+        </EntityType>
+        <EntityType Name="NIVEL_COMPLEJIDAD">
+          <Key>
+            <PropertyRef Name="COD_NIVEL_COMPL" />
+          </Key>
+          <Property Name="COD_NIVEL_COMPL" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="DESC_NIVEL_COMPL" Type="char" MaxLength="30" />
+          <Property Name="COD_GRADO_COMPLEJIDAD" Type="smallint" />
+        </EntityType>
+        <EntityType Name="PS_CLASIFICACION_POS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ESTADO" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PS_CONDICIONES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ESTADO" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PS_DETALLE_SERVICIOS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="COD_SERVICIO" Type="char" MaxLength="18" Nullable="false" />
+          <Property Name="COD_GRUPO" Type="char" MaxLength="18" Nullable="false" />
+          <Property Name="COD_SUBGRUPO" Type="char" MaxLength="18" Nullable="false" />
+          <Property Name="COD_PLAN" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="COD_EPS" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="COD_REGIONAL" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="ID_PS_POS_CONDICIONADO" Type="bigint" />
+          <Property Name="ID_PS_CLASIFICACION_POS" Type="bigint" Nullable="false" />
+          <Property Name="COD_USUARIO" Type="char" MaxLength="18" />
+        </EntityType>
+        <EntityType Name="PS_GRUPOS_ETAREOS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" />
+          <Property Name="COD_SEXO" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="EDAD_MINIMA" Type="bigint" Nullable="false" />
+          <Property Name="EDAD_MAXIMA" Type="bigint" Nullable="false" />
+          <Property Name="ID_UNIDADMEDIDA" Type="bigint" Nullable="false" />
+          <Property Name="DESC_GRUPOETAREO" Type="varchar" MaxLength="2000" Nullable="false" />
+          <Property Name="ESTADO_GRUPOETAREO" Type="bit" Nullable="false" />
+          <Property Name="COD_USUARIO" Type="char" MaxLength="18" />
+        </EntityType>
+        <EntityType Name="PS_POS_CONDICIONADO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_PS_GRUPOS_ETAREOS" Type="bigint" />
+          <Property Name="DIAGNOSTICO" Type="char" MaxLength="6" />
+          <Property Name="CANTIDAD" Type="bigint" />
+          <Property Name="MENSAJE_INFORMATIVO" Type="nvarchar" MaxLength="120" />
+        </EntityType>
+        <EntityType Name="PS_SERVICIOS">
+          <Key>
+            <PropertyRef Name="COD_SERVICIO" />
+            <PropertyRef Name="COD_GRUPO" />
+            <PropertyRef Name="COD_SUBGRUPO" />
+          </Key>
+          <Property Name="COD_SERVICIO" Type="char" MaxLength="18" Nullable="false" />
+          <Property Name="COD_GRUPO" Type="char" MaxLength="18" Nullable="false" />
+          <Property Name="COD_SUBGRUPO" Type="char" MaxLength="18" Nullable="false" />
+          <Property Name="DESCR_SERVICIO" Type="nvarchar" MaxLength="254" Nullable="false" />
+          <Property Name="ABREVIATURA" Type="char" MaxLength="18" />
+          <Property Name="COD_ENTIDAD" Type="nvarchar" MaxLength="100" />
+          <Property Name="COD_CLASIF_CONTABLE" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="APLICA_ESPECIALIDAD" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="COD_CONCEPTOC_EVENTO" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="COD_CONCEPTOC_CAPITA" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="COD_ENTIDADSP" Type="nvarchar" MaxLength="18" />
+          <Property Name="COMPLEJIDAD" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="REGISTRO_SANITARIO" Type="nvarchar" MaxLength="25" />
+          <Property Name="COD_TIPO_SERVICIO" Type="smallint" />
+          <Property Name="ID_ESTADO_SERVICIOS" Type="int" />
+          <Property Name="CUM" Type="char" MaxLength="18" />
+          <Property Name="OBSERVACIONES" Type="nvarchar" MaxLength="300" />
+          <Property Name="FORMULA_MAGISTRAL" Type="bit" />
+          <Property Name="VITAL_DISPONIBLE" Type="bit" />
+          <Property Name="ID_TECNOLOGIA" Type="bigint" />
+          <Property Name="AUTORIZACION_RELACIONADA" Type="bit" />
+          <Property Name="CODIGO_IUM" Type="char" MaxLength="15" />
+          <Property Name="NIVEL_AUTORIZACION" Type="smallint" Nullable="false" />
+          <Property Name="EDAD_MINIMA" Type="smallint" Nullable="false" />
+          <Property Name="EDAD_MAXIMA" Type="smallint" Nullable="false" />
+          <Property Name="COD_SEXO" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="UTILIZACION_MAXIMA" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="PERIODO_UTILIZACION_MAXIMA" Type="int" Nullable="false" />
+          <Property Name="PERIODO_TOPE_MAXIMO" Type="smallint" Nullable="false" />
+          <Property Name="MAXIMOXORDEN" Type="smallint" Nullable="false" />
+          <Property Name="DIAS_EXPIRACION" Type="smallint" Nullable="false" />
+          <Property Name="AUTORIZACION_INICIAL" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="DIAS_MAX_AUTORIZADOS" Type="smallint" Nullable="false" />
+          <Property Name="VALOR_VARIABLE" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="REVISION_DIAGNOSTICOS" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="PROFESIONAL_AUTORIZA" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="APLICA_COPAGO" Type="bit" />
+          <Property Name="APLICA_CUOTAMODERADORA" Type="bit" />
+          <Property Name="EXCLUIRVALIDACION" Type="bit" />
+          <Property Name="FECHA_CREACION" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SEXO">
+          <Key>
+            <PropertyRef Name="COD_SEXO" />
+          </Key>
+          <Property Name="COD_SEXO" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="DESC_SEXO" Type="char" MaxLength="12" Nullable="false" />
+          <Property Name="APLICA_AFILIACION" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="SUB_GRUPO">
+          <Key>
+            <PropertyRef Name="COD_SUBGRUPO" />
+            <PropertyRef Name="COD_GRUPO" />
+          </Key>
+          <Property Name="COD_SUBGRUPO" Type="char" MaxLength="18" Nullable="false" />
+          <Property Name="COD_GRUPO" Type="char" MaxLength="18" Nullable="false" />
+          <Property Name="DESCR_SUBGRUPO" Type="varchar" MaxLength="100" />
+          <Property Name="ABRE_SUBGRUPO" Type="char" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="SV_ESTADO_SERVICIOS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DECRIPCION" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SV_PROFESIONAL_AUTORIZA">
+          <Key>
+            <PropertyRef Name="PROFESIONAL_AUTORIZA" />
+          </Key>
+          <Property Name="PROFESIONAL_AUTORIZA" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="DESC_PROFESIONAL_AUTORIZA" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PYP_412" Type="bit" />
+        </EntityType>
+        <Association Name="FK_ADMINXREGIONAL_PLANES">
+          <End Role="GN_PLANES" Type="Self.GN_PLANES" Multiplicity="1" />
+          <End Role="GN_ADMINXREGIONAL" Type="Self.GN_ADMINXREGIONAL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GN_PLANES">
+              <PropertyRef Name="COD_PLAN" />
+            </Principal>
+            <Dependent Role="GN_ADMINXREGIONAL">
+              <PropertyRef Name="COD_PLAN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_COD_GN_TIPO_TECNOLOGIA_GN_TIPO_SERVICIOS">
+          <End Role="GN_TIPO_SERVICIOS" Type="Self.GN_TIPO_SERVICIOS" Multiplicity="1" />
+          <End Role="GN_TIPO_TECNOLOGIA" Type="Self.GN_TIPO_TECNOLOGIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GN_TIPO_SERVICIOS">
+              <PropertyRef Name="COD_TIPO_SERVICIO" />
+            </Principal>
+            <Dependent Role="GN_TIPO_TECNOLOGIA">
+              <PropertyRef Name="COD_TIPO_SERVICIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DIAGNOSTICOS_SEXO">
+          <End Role="SEXO" Type="Self.SEXO" Multiplicity="0..1" />
+          <End Role="DIAGNOSTICOS" Type="Self.DIAGNOSTICOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SEXO">
+              <PropertyRef Name="COD_SEXO" />
+            </Principal>
+            <Dependent Role="DIAGNOSTICOS">
+              <PropertyRef Name="SEXO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PS_DETALLE_SERVICIOS_GN_ADMINXREGIONAL">
+          <End Role="GN_ADMINXREGIONAL" Type="Self.GN_ADMINXREGIONAL" Multiplicity="1" />
+          <End Role="PS_DETALLE_SERVICIOS" Type="Self.PS_DETALLE_SERVICIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GN_ADMINXREGIONAL">
+              <PropertyRef Name="COD_EPS" />
+              <PropertyRef Name="COD_REGIONAL" />
+              <PropertyRef Name="COD_PLAN" />
+            </Principal>
+            <Dependent Role="PS_DETALLE_SERVICIOS">
+              <PropertyRef Name="COD_EPS" />
+              <PropertyRef Name="COD_REGIONAL" />
+              <PropertyRef Name="COD_PLAN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PS_DETALLE_SERVICIOS_GN_PLANES">
+          <End Role="GN_PLANES" Type="Self.GN_PLANES" Multiplicity="1" />
+          <End Role="PS_DETALLE_SERVICIOS" Type="Self.PS_DETALLE_SERVICIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GN_PLANES">
+              <PropertyRef Name="COD_PLAN" />
+            </Principal>
+            <Dependent Role="PS_DETALLE_SERVICIOS">
+              <PropertyRef Name="COD_PLAN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PS_DETALLE_SERVICIOS_GN_USUARIO_SISTEMA">
+          <End Role="GN_USUARIO_SISTEMA" Type="Self.GN_USUARIO_SISTEMA" Multiplicity="0..1" />
+          <End Role="PS_DETALLE_SERVICIOS" Type="Self.PS_DETALLE_SERVICIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GN_USUARIO_SISTEMA">
+              <PropertyRef Name="COD_USUARIO" />
+            </Principal>
+            <Dependent Role="PS_DETALLE_SERVICIOS">
+              <PropertyRef Name="COD_USUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PS_DETALLE_SERVICIOS_PS_CLASIFICACION_POS">
+          <End Role="PS_CLASIFICACION_POS" Type="Self.PS_CLASIFICACION_POS" Multiplicity="1" />
+          <End Role="PS_DETALLE_SERVICIOS" Type="Self.PS_DETALLE_SERVICIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PS_CLASIFICACION_POS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PS_DETALLE_SERVICIOS">
+              <PropertyRef Name="ID_PS_CLASIFICACION_POS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PS_DETALLE_SERVICIOS_PS_POS_CONDICIONADO">
+          <End Role="PS_POS_CONDICIONADO" Type="Self.PS_POS_CONDICIONADO" Multiplicity="0..1" />
+          <End Role="PS_DETALLE_SERVICIOS" Type="Self.PS_DETALLE_SERVICIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PS_POS_CONDICIONADO">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PS_DETALLE_SERVICIOS">
+              <PropertyRef Name="ID_PS_POS_CONDICIONADO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PS_DETALLE_SERVICIOS_PS_SERVICIOS">
+          <End Role="PS_SERVICIOS" Type="Self.PS_SERVICIOS" Multiplicity="1" />
+          <End Role="PS_DETALLE_SERVICIOS" Type="Self.PS_DETALLE_SERVICIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PS_SERVICIOS">
+              <PropertyRef Name="COD_SERVICIO" />
+              <PropertyRef Name="COD_GRUPO" />
+              <PropertyRef Name="COD_SUBGRUPO" />
+            </Principal>
+            <Dependent Role="PS_DETALLE_SERVICIOS">
+              <PropertyRef Name="COD_SERVICIO" />
+              <PropertyRef Name="COD_GRUPO" />
+              <PropertyRef Name="COD_SUBGRUPO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PS_GRUPOS_ETAREOS_GN_UNIDAD_MEDIDA">
+          <End Role="GN_UNIDAD_MEDIDA" Type="Self.GN_UNIDAD_MEDIDA" Multiplicity="1" />
+          <End Role="PS_GRUPOS_ETAREOS" Type="Self.PS_GRUPOS_ETAREOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GN_UNIDAD_MEDIDA">
+              <PropertyRef Name="ID_UNIDADMEDIDA" />
+            </Principal>
+            <Dependent Role="PS_GRUPOS_ETAREOS">
+              <PropertyRef Name="ID_UNIDADMEDIDA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PS_GRUPOS_ETAREOS_GN_USUARIO_SISTEMA">
+          <End Role="GN_USUARIO_SISTEMA" Type="Self.GN_USUARIO_SISTEMA" Multiplicity="0..1" />
+          <End Role="PS_GRUPOS_ETAREOS" Type="Self.PS_GRUPOS_ETAREOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GN_USUARIO_SISTEMA">
+              <PropertyRef Name="COD_USUARIO" />
+            </Principal>
+            <Dependent Role="PS_GRUPOS_ETAREOS">
+              <PropertyRef Name="COD_USUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PS_GRUPOS_ETAREOS_SEXO">
+          <End Role="SEXO" Type="Self.SEXO" Multiplicity="1" />
+          <End Role="PS_GRUPOS_ETAREOS" Type="Self.PS_GRUPOS_ETAREOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SEXO">
+              <PropertyRef Name="COD_SEXO" />
+            </Principal>
+            <Dependent Role="PS_GRUPOS_ETAREOS">
+              <PropertyRef Name="COD_SEXO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PS_POS_CONDICIONADO_DIAGNOSTICOS">
+          <End Role="DIAGNOSTICOS" Type="Self.DIAGNOSTICOS" Multiplicity="0..1" />
+          <End Role="PS_POS_CONDICIONADO" Type="Self.PS_POS_CONDICIONADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DIAGNOSTICOS">
+              <PropertyRef Name="DIAGNOSTICO" />
+            </Principal>
+            <Dependent Role="PS_POS_CONDICIONADO">
+              <PropertyRef Name="DIAGNOSTICO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PS_POS_CONDICIONADO_PS_GRUPOS_ETAREOS">
+          <End Role="PS_GRUPOS_ETAREOS" Type="Self.PS_GRUPOS_ETAREOS" Multiplicity="0..1" />
+          <End Role="PS_POS_CONDICIONADO" Type="Self.PS_POS_CONDICIONADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PS_GRUPOS_ETAREOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PS_POS_CONDICIONADO">
+              <PropertyRef Name="ID_PS_GRUPOS_ETAREOS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PS_SERVICIOS_GN_CLASIFIC_CONTABLE">
+          <End Role="GN_CLASIFIC_CONTABLE" Type="Self.GN_CLASIFIC_CONTABLE" Multiplicity="1" />
+          <End Role="PS_SERVICIOS" Type="Self.PS_SERVICIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GN_CLASIFIC_CONTABLE">
+              <PropertyRef Name="COD_CLASIF_CONTABLE" />
+            </Principal>
+            <Dependent Role="PS_SERVICIOS">
+              <PropertyRef Name="COD_CLASIF_CONTABLE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PS_SERVICIOS_GN_CONCEPTOS_CONTABLES">
+          <End Role="GN_CONCEPTOS_CONTABLES" Type="Self.GN_CONCEPTOS_CONTABLES" Multiplicity="1" />
+          <End Role="PS_SERVICIOS" Type="Self.PS_SERVICIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GN_CONCEPTOS_CONTABLES">
+              <PropertyRef Name="CONCEPTO_CONTABLE" />
+            </Principal>
+            <Dependent Role="PS_SERVICIOS">
+              <PropertyRef Name="COD_CONCEPTOC_EVENTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PS_SERVICIOS_GN_TIPO_SERVICIOS">
+          <End Role="GN_TIPO_SERVICIOS" Type="Self.GN_TIPO_SERVICIOS" Multiplicity="0..1" />
+          <End Role="PS_SERVICIOS" Type="Self.PS_SERVICIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GN_TIPO_SERVICIOS">
+              <PropertyRef Name="COD_TIPO_SERVICIO" />
+            </Principal>
+            <Dependent Role="PS_SERVICIOS">
+              <PropertyRef Name="COD_TIPO_SERVICIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PS_SERVICIOS_GN_TIPO_TECNOLOGIA">
+          <End Role="GN_TIPO_TECNOLOGIA" Type="Self.GN_TIPO_TECNOLOGIA" Multiplicity="0..1" />
+          <End Role="PS_SERVICIOS" Type="Self.PS_SERVICIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GN_TIPO_TECNOLOGIA">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PS_SERVICIOS">
+              <PropertyRef Name="ID_TECNOLOGIA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PS_SERVICIOS_NIVEL_COMPLEJIDAD">
+          <End Role="NIVEL_COMPLEJIDAD" Type="Self.NIVEL_COMPLEJIDAD" Multiplicity="1" />
+          <End Role="PS_SERVICIOS" Type="Self.PS_SERVICIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NIVEL_COMPLEJIDAD">
+              <PropertyRef Name="COD_NIVEL_COMPL" />
+            </Principal>
+            <Dependent Role="PS_SERVICIOS">
+              <PropertyRef Name="COMPLEJIDAD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PS_SERVICIOS_SEXO">
+          <End Role="SEXO" Type="Self.SEXO" Multiplicity="1" />
+          <End Role="PS_SERVICIOS" Type="Self.PS_SERVICIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SEXO">
+              <PropertyRef Name="COD_SEXO" />
+            </Principal>
+            <Dependent Role="PS_SERVICIOS">
+              <PropertyRef Name="COD_SEXO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PS_SERVICIOS_SUB_GRUPO">
+          <End Role="SUB_GRUPO" Type="Self.SUB_GRUPO" Multiplicity="1" />
+          <End Role="PS_SERVICIOS" Type="Self.PS_SERVICIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SUB_GRUPO">
+              <PropertyRef Name="COD_SUBGRUPO" />
+              <PropertyRef Name="COD_GRUPO" />
+            </Principal>
+            <Dependent Role="PS_SERVICIOS">
+              <PropertyRef Name="COD_SUBGRUPO" />
+              <PropertyRef Name="COD_GRUPO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PS_SERVICIOS_SV_ESTADO_SERVICIOS">
+          <End Role="SV_ESTADO_SERVICIOS" Type="Self.SV_ESTADO_SERVICIOS" Multiplicity="0..1" />
+          <End Role="PS_SERVICIOS" Type="Self.PS_SERVICIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SV_ESTADO_SERVICIOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PS_SERVICIOS">
+              <PropertyRef Name="ID_ESTADO_SERVICIOS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PS_SERVICIOS_SV_PROFESIONAL_AUTORIZA">
+          <End Role="SV_PROFESIONAL_AUTORIZA" Type="Self.SV_PROFESIONAL_AUTORIZA" Multiplicity="1" />
+          <End Role="PS_SERVICIOS" Type="Self.PS_SERVICIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SV_PROFESIONAL_AUTORIZA">
+              <PropertyRef Name="PROFESIONAL_AUTORIZA" />
+            </Principal>
+            <Dependent Role="PS_SERVICIOS">
+              <PropertyRef Name="PROFESIONAL_AUTORIZA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SUB_GRUPO_GRUPO">
+          <End Role="GRUPO" Type="Self.GRUPO" Multiplicity="1" />
+          <End Role="SUB_GRUPO" Type="Self.SUB_GRUPO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GRUPO">
+              <PropertyRef Name="COD_GRUPO" />
+            </Principal>
+            <Dependent Role="SUB_GRUPO">
+              <PropertyRef Name="COD_GRUPO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="P_CONSULTAR_SUB_GRUPO_X_FILTRO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="par_cod_grupo" Type="varchar" Mode="In" />
+          <Parameter Name="par_cod_subgrupo" Type="varchar" Mode="In" />
+          <Parameter Name="par_descripcion" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="P_PS_CONSULTAR_TIPO_TECNOLOGIA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="COD_DIC" Type="varchar" Mode="In" />
+          <Parameter Name="DESCRIPCION_DCI" Type="varchar" Mode="In" />
+          <Parameter Name="COD_TIPO_SERVICIO" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="GruposEtareosModelStoreContainer">
+          <EntitySet Name="DIAGNOSTICOS" EntityType="Self.DIAGNOSTICOS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GN_ADMINXREGIONAL" EntityType="Self.GN_ADMINXREGIONAL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GN_CLASIFIC_CONTABLE" EntityType="Self.GN_CLASIFIC_CONTABLE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GN_CONCEPTOS_CONTABLES" EntityType="Self.GN_CONCEPTOS_CONTABLES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GN_NIVEL_AUTORIZ" EntityType="Self.GN_NIVEL_AUTORIZ" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GN_PLANES" EntityType="Self.GN_PLANES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GN_TIPO_SERVICIOS" EntityType="Self.GN_TIPO_SERVICIOS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GN_TIPO_TECNOLOGIA" EntityType="Self.GN_TIPO_TECNOLOGIA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GN_UNIDAD_MEDIDA" EntityType="Self.GN_UNIDAD_MEDIDA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GN_USUARIO_SISTEMA" EntityType="Self.GN_USUARIO_SISTEMA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GRUPO" EntityType="Self.GRUPO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NIVEL_COMPLEJIDAD" EntityType="Self.NIVEL_COMPLEJIDAD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PS_CLASIFICACION_POS" EntityType="Self.PS_CLASIFICACION_POS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PS_CONDICIONES" EntityType="Self.PS_CONDICIONES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PS_DETALLE_SERVICIOS" EntityType="Self.PS_DETALLE_SERVICIOS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PS_GRUPOS_ETAREOS" EntityType="Self.PS_GRUPOS_ETAREOS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PS_POS_CONDICIONADO" EntityType="Self.PS_POS_CONDICIONADO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PS_SERVICIOS" EntityType="Self.PS_SERVICIOS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SEXO" EntityType="Self.SEXO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SUB_GRUPO" EntityType="Self.SUB_GRUPO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SV_ESTADO_SERVICIOS" EntityType="Self.SV_ESTADO_SERVICIOS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SV_PROFESIONAL_AUTORIZA" EntityType="Self.SV_PROFESIONAL_AUTORIZA" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ADMINXREGIONAL_PLANES" Association="Self.FK_ADMINXREGIONAL_PLANES">
+            <End Role="GN_PLANES" EntitySet="GN_PLANES" />
+            <End Role="GN_ADMINXREGIONAL" EntitySet="GN_ADMINXREGIONAL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_COD_GN_TIPO_TECNOLOGIA_GN_TIPO_SERVICIOS" Association="Self.FK_COD_GN_TIPO_TECNOLOGIA_GN_TIPO_SERVICIOS">
+            <End Role="GN_TIPO_SERVICIOS" EntitySet="GN_TIPO_SERVICIOS" />
+            <End Role="GN_TIPO_TECNOLOGIA" EntitySet="GN_TIPO_TECNOLOGIA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DIAGNOSTICOS_SEXO" Association="Self.FK_DIAGNOSTICOS_SEXO">
+            <End Role="SEXO" EntitySet="SEXO" />
+            <End Role="DIAGNOSTICOS" EntitySet="DIAGNOSTICOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PS_DETALLE_SERVICIOS_GN_ADMINXREGIONAL" Association="Self.FK_PS_DETALLE_SERVICIOS_GN_ADMINXREGIONAL">
+            <End Role="GN_ADMINXREGIONAL" EntitySet="GN_ADMINXREGIONAL" />
+            <End Role="PS_DETALLE_SERVICIOS" EntitySet="PS_DETALLE_SERVICIOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PS_DETALLE_SERVICIOS_GN_PLANES" Association="Self.FK_PS_DETALLE_SERVICIOS_GN_PLANES">
+            <End Role="GN_PLANES" EntitySet="GN_PLANES" />
+            <End Role="PS_DETALLE_SERVICIOS" EntitySet="PS_DETALLE_SERVICIOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PS_DETALLE_SERVICIOS_GN_USUARIO_SISTEMA" Association="Self.FK_PS_DETALLE_SERVICIOS_GN_USUARIO_SISTEMA">
+            <End Role="GN_USUARIO_SISTEMA" EntitySet="GN_USUARIO_SISTEMA" />
+            <End Role="PS_DETALLE_SERVICIOS" EntitySet="PS_DETALLE_SERVICIOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PS_DETALLE_SERVICIOS_PS_CLASIFICACION_POS" Association="Self.FK_PS_DETALLE_SERVICIOS_PS_CLASIFICACION_POS">
+            <End Role="PS_CLASIFICACION_POS" EntitySet="PS_CLASIFICACION_POS" />
+            <End Role="PS_DETALLE_SERVICIOS" EntitySet="PS_DETALLE_SERVICIOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PS_DETALLE_SERVICIOS_PS_POS_CONDICIONADO" Association="Self.FK_PS_DETALLE_SERVICIOS_PS_POS_CONDICIONADO">
+            <End Role="PS_POS_CONDICIONADO" EntitySet="PS_POS_CONDICIONADO" />
+            <End Role="PS_DETALLE_SERVICIOS" EntitySet="PS_DETALLE_SERVICIOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PS_DETALLE_SERVICIOS_PS_SERVICIOS" Association="Self.FK_PS_DETALLE_SERVICIOS_PS_SERVICIOS">
+            <End Role="PS_SERVICIOS" EntitySet="PS_SERVICIOS" />
+            <End Role="PS_DETALLE_SERVICIOS" EntitySet="PS_DETALLE_SERVICIOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PS_GRUPOS_ETAREOS_GN_UNIDAD_MEDIDA" Association="Self.FK_PS_GRUPOS_ETAREOS_GN_UNIDAD_MEDIDA">
+            <End Role="GN_UNIDAD_MEDIDA" EntitySet="GN_UNIDAD_MEDIDA" />
+            <End Role="PS_GRUPOS_ETAREOS" EntitySet="PS_GRUPOS_ETAREOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PS_GRUPOS_ETAREOS_GN_USUARIO_SISTEMA" Association="Self.FK_PS_GRUPOS_ETAREOS_GN_USUARIO_SISTEMA">
+            <End Role="GN_USUARIO_SISTEMA" EntitySet="GN_USUARIO_SISTEMA" />
+            <End Role="PS_GRUPOS_ETAREOS" EntitySet="PS_GRUPOS_ETAREOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PS_GRUPOS_ETAREOS_SEXO" Association="Self.FK_PS_GRUPOS_ETAREOS_SEXO">
+            <End Role="SEXO" EntitySet="SEXO" />
+            <End Role="PS_GRUPOS_ETAREOS" EntitySet="PS_GRUPOS_ETAREOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PS_POS_CONDICIONADO_DIAGNOSTICOS" Association="Self.FK_PS_POS_CONDICIONADO_DIAGNOSTICOS">
+            <End Role="DIAGNOSTICOS" EntitySet="DIAGNOSTICOS" />
+            <End Role="PS_POS_CONDICIONADO" EntitySet="PS_POS_CONDICIONADO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PS_POS_CONDICIONADO_PS_GRUPOS_ETAREOS" Association="Self.FK_PS_POS_CONDICIONADO_PS_GRUPOS_ETAREOS">
+            <End Role="PS_GRUPOS_ETAREOS" EntitySet="PS_GRUPOS_ETAREOS" />
+            <End Role="PS_POS_CONDICIONADO" EntitySet="PS_POS_CONDICIONADO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PS_SERVICIOS_GN_CLASIFIC_CONTABLE" Association="Self.FK_PS_SERVICIOS_GN_CLASIFIC_CONTABLE">
+            <End Role="GN_CLASIFIC_CONTABLE" EntitySet="GN_CLASIFIC_CONTABLE" />
+            <End Role="PS_SERVICIOS" EntitySet="PS_SERVICIOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PS_SERVICIOS_GN_CONCEPTOS_CONTABLES" Association="Self.FK_PS_SERVICIOS_GN_CONCEPTOS_CONTABLES">
+            <End Role="GN_CONCEPTOS_CONTABLES" EntitySet="GN_CONCEPTOS_CONTABLES" />
+            <End Role="PS_SERVICIOS" EntitySet="PS_SERVICIOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PS_SERVICIOS_GN_TIPO_SERVICIOS" Association="Self.FK_PS_SERVICIOS_GN_TIPO_SERVICIOS">
+            <End Role="GN_TIPO_SERVICIOS" EntitySet="GN_TIPO_SERVICIOS" />
+            <End Role="PS_SERVICIOS" EntitySet="PS_SERVICIOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PS_SERVICIOS_GN_TIPO_TECNOLOGIA" Association="Self.FK_PS_SERVICIOS_GN_TIPO_TECNOLOGIA">
+            <End Role="GN_TIPO_TECNOLOGIA" EntitySet="GN_TIPO_TECNOLOGIA" />
+            <End Role="PS_SERVICIOS" EntitySet="PS_SERVICIOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PS_SERVICIOS_NIVEL_COMPLEJIDAD" Association="Self.FK_PS_SERVICIOS_NIVEL_COMPLEJIDAD">
+            <End Role="NIVEL_COMPLEJIDAD" EntitySet="NIVEL_COMPLEJIDAD" />
+            <End Role="PS_SERVICIOS" EntitySet="PS_SERVICIOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PS_SERVICIOS_SEXO" Association="Self.FK_PS_SERVICIOS_SEXO">
+            <End Role="SEXO" EntitySet="SEXO" />
+            <End Role="PS_SERVICIOS" EntitySet="PS_SERVICIOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PS_SERVICIOS_SUB_GRUPO" Association="Self.FK_PS_SERVICIOS_SUB_GRUPO">
+            <End Role="SUB_GRUPO" EntitySet="SUB_GRUPO" />
+            <End Role="PS_SERVICIOS" EntitySet="PS_SERVICIOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PS_SERVICIOS_SV_ESTADO_SERVICIOS" Association="Self.FK_PS_SERVICIOS_SV_ESTADO_SERVICIOS">
+            <End Role="SV_ESTADO_SERVICIOS" EntitySet="SV_ESTADO_SERVICIOS" />
+            <End Role="PS_SERVICIOS" EntitySet="PS_SERVICIOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PS_SERVICIOS_SV_PROFESIONAL_AUTORIZA" Association="Self.FK_PS_SERVICIOS_SV_PROFESIONAL_AUTORIZA">
+            <End Role="SV_PROFESIONAL_AUTORIZA" EntitySet="SV_PROFESIONAL_AUTORIZA" />
+            <End Role="PS_SERVICIOS" EntitySet="PS_SERVICIOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SUB_GRUPO_GRUPO" Association="Self.FK_SUB_GRUPO_GRUPO">
+            <End Role="GRUPO" EntitySet="GRUPO" />
+            <End Role="SUB_GRUPO" EntitySet="SUB_GRUPO" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GruposEtareosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="GN_UNIDAD_MEDIDA">
+          <Key>
+            <PropertyRef Name="ID_UNIDADMEDIDA" />
+          </Key>
+          <Property Name="ID_UNIDADMEDIDA" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DESC_UNIDADMEDIDA" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="PS_GRUPOS_ETAREOS" Relationship="GruposEtareosModel.FK_PS_GRUPOS_ETAREOS_GN_UNIDAD_MEDIDA" FromRole="GN_UNIDAD_MEDIDA" ToRole="PS_GRUPOS_ETAREOS" />
+        </EntityType>
+        <EntityContainer Name="GruposEtareosEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="GN_UNIDAD_MEDIDA" EntityType="Self.GN_UNIDAD_MEDIDA" />
+          <EntitySet Name="SEXOes" EntityType="GruposEtareosModel.SEXO" />
+          <EntitySet Name="PS_GRUPOS_ETAREOS" EntityType="GruposEtareosModel.PS_GRUPOS_ETAREOS" />
+          <AssociationSet Name="FK_PS_GRUPOS_ETAREOS_GN_UNIDAD_MEDIDA" Association="GruposEtareosModel.FK_PS_GRUPOS_ETAREOS_GN_UNIDAD_MEDIDA">
+            <End Role="GN_UNIDAD_MEDIDA" EntitySet="GN_UNIDAD_MEDIDA" />
+            <End Role="PS_GRUPOS_ETAREOS" EntitySet="PS_GRUPOS_ETAREOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PS_GRUPOS_ETAREOS_SEXO" Association="GruposEtareosModel.FK_PS_GRUPOS_ETAREOS_SEXO">
+            <End Role="SEXO" EntitySet="SEXOes" />
+            <End Role="PS_GRUPOS_ETAREOS" EntitySet="PS_GRUPOS_ETAREOS" />
+          </AssociationSet>
+          <EntitySet Name="GN_USUARIO_SISTEMA" EntityType="GruposEtareosModel.GN_USUARIO_SISTEMA" />
+          <AssociationSet Name="FK_PS_GRUPOS_ETAREOS_GN_USUARIO_SISTEMA" Association="GruposEtareosModel.FK_PS_GRUPOS_ETAREOS_GN_USUARIO_SISTEMA">
+            <End Role="GN_USUARIO_SISTEMA" EntitySet="GN_USUARIO_SISTEMA" />
+            <End Role="PS_GRUPOS_ETAREOS" EntitySet="PS_GRUPOS_ETAREOS" />
+          </AssociationSet>
+          <EntitySet Name="GN_CLASIFIC_CONTABLE" EntityType="GruposEtareosModel.GN_CLASIFIC_CONTABLE" />
+          <EntitySet Name="GN_CONCEPTOS_CONTABLES" EntityType="GruposEtareosModel.GN_CONCEPTOS_CONTABLES" />
+          <EntitySet Name="GN_TIPO_SERVICIOS" EntityType="GruposEtareosModel.GN_TIPO_SERVICIOS" />
+          <EntitySet Name="GRUPOes" EntityType="GruposEtareosModel.GRUPO" />
+          <EntitySet Name="NIVEL_COMPLEJIDAD" EntityType="GruposEtareosModel.NIVEL_COMPLEJIDAD" />
+          <EntitySet Name="SUB_GRUPO" EntityType="GruposEtareosModel.SUB_GRUPO" />
+          <AssociationSet Name="FK_SUB_GRUPO_GRUPO" Association="GruposEtareosModel.FK_SUB_GRUPO_GRUPO">
+            <End Role="GRUPO" EntitySet="GRUPOes" />
+            <End Role="SUB_GRUPO" EntitySet="SUB_GRUPO" />
+          </AssociationSet>
+          <EntitySet Name="DIAGNOSTICOS" EntityType="GruposEtareosModel.DIAGNOSTICO" />
+          <EntitySet Name="GN_PLANES" EntityType="GruposEtareosModel.GN_PLANES" />
+          <EntitySet Name="GN_TIPO_TECNOLOGIA" EntityType="GruposEtareosModel.GN_TIPO_TECNOLOGIA" />
+          <EntitySet Name="PS_CLASIFICACION_POS" EntityType="GruposEtareosModel.PS_CLASIFICACION_POS" />
+          <EntitySet Name="SV_ESTADO_SERVICIOS" EntityType="GruposEtareosModel.SV_ESTADO_SERVICIOS" />
+          <EntitySet Name="SV_PROFESIONAL_AUTORIZA" EntityType="GruposEtareosModel.SV_PROFESIONAL_AUTORIZA" />
+          <AssociationSet Name="FK_DIAGNOSTICOS_SEXO" Association="GruposEtareosModel.FK_DIAGNOSTICOS_SEXO">
+            <End Role="SEXO" EntitySet="SEXOes" />
+            <End Role="DIAGNOSTICO" EntitySet="DIAGNOSTICOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_COD_GN_TIPO_TECNOLOGIA_GN_TIPO_SERVICIOS" Association="GruposEtareosModel.FK_COD_GN_TIPO_TECNOLOGIA_GN_TIPO_SERVICIOS">
+            <End Role="GN_TIPO_SERVICIOS" EntitySet="GN_TIPO_SERVICIOS" />
+            <End Role="GN_TIPO_TECNOLOGIA" EntitySet="GN_TIPO_TECNOLOGIA" />
+          </AssociationSet>
+          <FunctionImport Name="P_CONSULTAR_SUB_GRUPO_X_FILTRO" ReturnType="Collection(GruposEtareosModel.P_CONSULTAR_SUB_GRUPO_X_FILTRO_Result)">
+            <Parameter Name="par_cod_grupo" Mode="In" Type="String" />
+            <Parameter Name="par_cod_subgrupo" Mode="In" Type="String" />
+            <Parameter Name="par_descripcion" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="GN_NIVEL_AUTORIZ" EntityType="GruposEtareosModel.GN_NIVEL_AUTORIZ" />
+          <EntitySet Name="PS_CONDICIONES" EntityType="GruposEtareosModel.PS_CONDICIONES" />
+          <EntitySet Name="PS_POS_CONDICIONADO" EntityType="GruposEtareosModel.PS_POS_CONDICIONADO" />
+          <AssociationSet Name="FK_PS_POS_CONDICIONADO_DIAGNOSTICOS" Association="GruposEtareosModel.FK_PS_POS_CONDICIONADO_DIAGNOSTICOS">
+            <End Role="DIAGNOSTICO" EntitySet="DIAGNOSTICOS" />
+            <End Role="PS_POS_CONDICIONADO" EntitySet="PS_POS_CONDICIONADO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PS_POS_CONDICIONADO_PS_GRUPOS_ETAREOS" Association="GruposEtareosModel.FK_PS_POS_CONDICIONADO_PS_GRUPOS_ETAREOS">
+            <End Role="PS_GRUPOS_ETAREOS" EntitySet="PS_GRUPOS_ETAREOS" />
+            <End Role="PS_POS_CONDICIONADO" EntitySet="PS_POS_CONDICIONADO" />
+          </AssociationSet>
+          <EntitySet Name="PS_SERVICIOS" EntityType="GruposEtareosModel.PS_SERVICIOS" />
+          <AssociationSet Name="FK_PS_SERVICIOS_GN_CLASIFIC_CONTABLE" Association="GruposEtareosModel.FK_PS_SERVICIOS_GN_CLASIFIC_CONTABLE">
+            <End Role="GN_CLASIFIC_CONTABLE" EntitySet="GN_CLASIFIC_CONTABLE" />
+            <End Role="PS_SERVICIOS" EntitySet="PS_SERVICIOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PS_SERVICIOS_GN_CONCEPTOS_CONTABLES" Association="GruposEtareosModel.FK_PS_SERVICIOS_GN_CONCEPTOS_CONTABLES">
+            <End Role="GN_CONCEPTOS_CONTABLES" EntitySet="GN_CONCEPTOS_CONTABLES" />
+            <End Role="PS_SERVICIOS" EntitySet="PS_SERVICIOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PS_SERVICIOS_GN_TIPO_SERVICIOS" Association="GruposEtareosModel.FK_PS_SERVICIOS_GN_TIPO_SERVICIOS">
+            <End Role="GN_TIPO_SERVICIOS" EntitySet="GN_TIPO_SERVICIOS" />
+            <End Role="PS_SERVICIOS" EntitySet="PS_SERVICIOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PS_SERVICIOS_GN_TIPO_TECNOLOGIA" Association="GruposEtareosModel.FK_PS_SERVICIOS_GN_TIPO_TECNOLOGIA">
+            <End Role="GN_TIPO_TECNOLOGIA" EntitySet="GN_TIPO_TECNOLOGIA" />
+            <End Role="PS_SERVICIOS" EntitySet="PS_SERVICIOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PS_SERVICIOS_NIVEL_COMPLEJIDAD" Association="GruposEtareosModel.FK_PS_SERVICIOS_NIVEL_COMPLEJIDAD">
+            <End Role="NIVEL_COMPLEJIDAD" EntitySet="NIVEL_COMPLEJIDAD" />
+            <End Role="PS_SERVICIOS" EntitySet="PS_SERVICIOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PS_SERVICIOS_SEXO" Association="GruposEtareosModel.FK_PS_SERVICIOS_SEXO">
+            <End Role="SEXO" EntitySet="SEXOes" />
+            <End Role="PS_SERVICIOS" EntitySet="PS_SERVICIOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PS_SERVICIOS_SUB_GRUPO" Association="GruposEtareosModel.FK_PS_SERVICIOS_SUB_GRUPO">
+            <End Role="SUB_GRUPO" EntitySet="SUB_GRUPO" />
+            <End Role="PS_SERVICIOS" EntitySet="PS_SERVICIOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PS_SERVICIOS_SV_ESTADO_SERVICIOS" Association="GruposEtareosModel.FK_PS_SERVICIOS_SV_ESTADO_SERVICIOS">
+            <End Role="SV_ESTADO_SERVICIOS" EntitySet="SV_ESTADO_SERVICIOS" />
+            <End Role="PS_SERVICIOS" EntitySet="PS_SERVICIOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PS_SERVICIOS_SV_PROFESIONAL_AUTORIZA" Association="GruposEtareosModel.FK_PS_SERVICIOS_SV_PROFESIONAL_AUTORIZA">
+            <End Role="SV_PROFESIONAL_AUTORIZA" EntitySet="SV_PROFESIONAL_AUTORIZA" />
+            <End Role="PS_SERVICIOS" EntitySet="PS_SERVICIOS" />
+          </AssociationSet>
+          <EntitySet Name="GN_ADMINXREGIONAL" EntityType="GruposEtareosModel.GN_ADMINXREGIONAL" />
+          <AssociationSet Name="FK_ADMINXREGIONAL_PLANES" Association="GruposEtareosModel.FK_ADMINXREGIONAL_PLANES">
+            <End Role="GN_PLANES" EntitySet="GN_PLANES" />
+            <End Role="GN_ADMINXREGIONAL" EntitySet="GN_ADMINXREGIONAL" />
+          </AssociationSet>
+          <FunctionImport Name="P_PS_CONSULTAR_TIPO_TECNOLOGIA" ReturnType="Collection(GruposEtareosModel.P_PS_CONSULTAR_TIPO_TECNOLOGIA_Result)">
+            <Parameter Name="COD_DIC" Mode="In" Type="String" />
+            <Parameter Name="DESCRIPCION_DCI" Mode="In" Type="String" />
+            <Parameter Name="COD_TIPO_SERVICIO" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="PS_DETALLE_SERVICIOS" EntityType="GruposEtareosModel.PS_DETALLE_SERVICIOS" />
+          <AssociationSet Name="FK_PS_DETALLE_SERVICIOS_GN_ADMINXREGIONAL" Association="GruposEtareosModel.FK_PS_DETALLE_SERVICIOS_GN_ADMINXREGIONAL">
+            <End Role="GN_ADMINXREGIONAL" EntitySet="GN_ADMINXREGIONAL" />
+            <End Role="PS_DETALLE_SERVICIOS" EntitySet="PS_DETALLE_SERVICIOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PS_DETALLE_SERVICIOS_GN_PLANES" Association="GruposEtareosModel.FK_PS_DETALLE_SERVICIOS_GN_PLANES">
+            <End Role="GN_PLANES" EntitySet="GN_PLANES" />
+            <End Role="PS_DETALLE_SERVICIOS" EntitySet="PS_DETALLE_SERVICIOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PS_DETALLE_SERVICIOS_GN_USUARIO_SISTEMA" Association="GruposEtareosModel.FK_PS_DETALLE_SERVICIOS_GN_USUARIO_SISTEMA">
+            <End Role="GN_USUARIO_SISTEMA" EntitySet="GN_USUARIO_SISTEMA" />
+            <End Role="PS_DETALLE_SERVICIOS" EntitySet="PS_DETALLE_SERVICIOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PS_DETALLE_SERVICIOS_PS_CLASIFICACION_POS" Association="GruposEtareosModel.FK_PS_DETALLE_SERVICIOS_PS_CLASIFICACION_POS">
+            <End Role="PS_CLASIFICACION_POS" EntitySet="PS_CLASIFICACION_POS" />
+            <End Role="PS_DETALLE_SERVICIOS" EntitySet="PS_DETALLE_SERVICIOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PS_DETALLE_SERVICIOS_PS_POS_CONDICIONADO" Association="GruposEtareosModel.FK_PS_DETALLE_SERVICIOS_PS_POS_CONDICIONADO">
+            <End Role="PS_POS_CONDICIONADO" EntitySet="PS_POS_CONDICIONADO" />
+            <End Role="PS_DETALLE_SERVICIOS" EntitySet="PS_DETALLE_SERVICIOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PS_DETALLE_SERVICIOS_PS_SERVICIOS" Association="GruposEtareosModel.FK_PS_DETALLE_SERVICIOS_PS_SERVICIOS">
+            <End Role="PS_SERVICIOS" EntitySet="PS_SERVICIOS" />
+            <End Role="PS_DETALLE_SERVICIOS" EntitySet="PS_DETALLE_SERVICIOS" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="SEXO">
+          <Key>
+            <PropertyRef Name="COD_SEXO" />
+          </Key>
+          <Property Name="COD_SEXO" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="DESC_SEXO" Type="String" Nullable="false" MaxLength="12" FixedLength="true" Unicode="false" />
+          <Property Name="APLICA_AFILIACION" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="PS_GRUPOS_ETAREOS" Relationship="GruposEtareosModel.FK_PS_GRUPOS_ETAREOS_SEXO" FromRole="SEXO" ToRole="PS_GRUPOS_ETAREOS" />
+          <NavigationProperty Name="DIAGNOSTICOS" Relationship="GruposEtareosModel.FK_DIAGNOSTICOS_SEXO" FromRole="SEXO" ToRole="DIAGNOSTICO" />
+          <NavigationProperty Name="PS_SERVICIOS" Relationship="GruposEtareosModel.FK_PS_SERVICIOS_SEXO" FromRole="SEXO" ToRole="PS_SERVICIOS" />
+        </EntityType>
+        <EntityType Name="PS_GRUPOS_ETAREOS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="COD_SEXO" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="EDAD_MINIMA" Type="Int64" Nullable="false" />
+          <Property Name="EDAD_MAXIMA" Type="Int64" Nullable="false" />
+          <Property Name="ID_UNIDADMEDIDA" Type="Int64" Nullable="false" />
+          <Property Name="DESC_GRUPOETAREO" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="ESTADO_GRUPOETAREO" Type="Boolean" Nullable="false" />
+          <Property Name="COD_USUARIO" Type="String" MaxLength="18" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="GN_UNIDAD_MEDIDA" Relationship="GruposEtareosModel.FK_PS_GRUPOS_ETAREOS_GN_UNIDAD_MEDIDA" FromRole="PS_GRUPOS_ETAREOS" ToRole="GN_UNIDAD_MEDIDA" />
+          <NavigationProperty Name="SEXO" Relationship="GruposEtareosModel.FK_PS_GRUPOS_ETAREOS_SEXO" FromRole="PS_GRUPOS_ETAREOS" ToRole="SEXO" />
+          <NavigationProperty Name="GN_USUARIO_SISTEMA" Relationship="GruposEtareosModel.FK_PS_GRUPOS_ETAREOS_GN_USUARIO_SISTEMA" FromRole="PS_GRUPOS_ETAREOS" ToRole="GN_USUARIO_SISTEMA" />
+          <NavigationProperty Name="PS_POS_CONDICIONADO" Relationship="GruposEtareosModel.FK_PS_POS_CONDICIONADO_PS_GRUPOS_ETAREOS" FromRole="PS_GRUPOS_ETAREOS" ToRole="PS_POS_CONDICIONADO" />
+        </EntityType>
+        <Association Name="FK_PS_GRUPOS_ETAREOS_GN_UNIDAD_MEDIDA">
+          <End Type="GruposEtareosModel.GN_UNIDAD_MEDIDA" Role="GN_UNIDAD_MEDIDA" Multiplicity="1" />
+          <End Type="GruposEtareosModel.PS_GRUPOS_ETAREOS" Role="PS_GRUPOS_ETAREOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GN_UNIDAD_MEDIDA">
+              <PropertyRef Name="ID_UNIDADMEDIDA" />
+            </Principal>
+            <Dependent Role="PS_GRUPOS_ETAREOS">
+              <PropertyRef Name="ID_UNIDADMEDIDA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PS_GRUPOS_ETAREOS_SEXO">
+          <End Type="GruposEtareosModel.SEXO" Role="SEXO" Multiplicity="1" />
+          <End Type="GruposEtareosModel.PS_GRUPOS_ETAREOS" Role="PS_GRUPOS_ETAREOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SEXO">
+              <PropertyRef Name="COD_SEXO" />
+            </Principal>
+            <Dependent Role="PS_GRUPOS_ETAREOS">
+              <PropertyRef Name="COD_SEXO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="GN_USUARIO_SISTEMA">
+          <Key>
+            <PropertyRef Name="COD_USUARIO" />
+          </Key>
+          <Property Name="COD_USUARIO" Type="String" Nullable="false" MaxLength="18" FixedLength="true" Unicode="false" />
+          <Property Name="NOMBRE_USUARIO" Type="String" Nullable="false" MaxLength="40" FixedLength="true" Unicode="false" />
+          <Property Name="CLAVE_USUARIO" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="COD_IPS" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="COD_SEDE_IPS" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Name="NIVEL_AUTORIZACION_3" Type="Int32" Nullable="false" />
+          <Property Name="ESTADO" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="COD_REGIONAL" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="COD_EPS" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="TIPO_USUARIO" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="COD_PLAN" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="PROFESIONAL_AUTORIZA" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="ARCHIVO_FIRMA" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="FIRMA" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="COD_COBERTURA" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="E_MAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Telefono" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Atender_Caso_SNE" Type="Boolean" />
+          <Property Name="Id_EstJerarquica" Type="Int32" />
+          <Property Name="COD_CARGO" Type="Int32" Nullable="false" />
+          <Property Name="USER_CALL_CENTER" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="AUDITOR_FALLO_TUTELA" Type="Boolean" Nullable="false" />
+          <Property Name="ANULA_PRESTACIONES_ECONOMICAS" Type="Boolean" Nullable="false" />
+          <Property Name="COD_SERVIDOR" Type="Int16" Nullable="false" />
+          <Property Name="MEDICO_AUDITOR" Type="Boolean" />
+          <Property Name="COORDINADOR_AC" Type="Boolean" />
+          <Property Name="COD_ROLE" Type="Int32" />
+          <Property Name="ANULA_ACTAS_CONCILIACION" Type="Boolean" />
+          <Property Name="ANULA_TUTELAS" Type="Boolean" />
+          <NavigationProperty Name="PS_GRUPOS_ETAREOS" Relationship="GruposEtareosModel.FK_PS_GRUPOS_ETAREOS_GN_USUARIO_SISTEMA" FromRole="GN_USUARIO_SISTEMA" ToRole="PS_GRUPOS_ETAREOS" />
+          <Property Name="AUTORIZA_PGP" Type="Boolean" />
+          <NavigationProperty Name="PS_DETALLE_SERVICIOS" Relationship="GruposEtareosModel.FK_PS_DETALLE_SERVICIOS_GN_USUARIO_SISTEMA" FromRole="GN_USUARIO_SISTEMA" ToRole="PS_DETALLE_SERVICIOS" />
+        </EntityType>
+        <Association Name="FK_PS_GRUPOS_ETAREOS_GN_USUARIO_SISTEMA">
+          <End Type="GruposEtareosModel.GN_USUARIO_SISTEMA" Role="GN_USUARIO_SISTEMA" Multiplicity="0..1" />
+          <End Type="GruposEtareosModel.PS_GRUPOS_ETAREOS" Role="PS_GRUPOS_ETAREOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GN_USUARIO_SISTEMA">
+              <PropertyRef Name="COD_USUARIO" />
+            </Principal>
+            <Dependent Role="PS_GRUPOS_ETAREOS">
+              <PropertyRef Name="COD_USUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="GN_CLASIFIC_CONTABLE">
+          <Key>
+            <PropertyRef Name="COD_CLASIF_CONTABLE" />
+          </Key>
+          <Property Name="COD_CLASIF_CONTABLE" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="DESC_CONTABLE" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PRIV_CAP" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
+          <Property Name="PUB_CAP" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
+          <Property Name="PRIV_EV" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
+          <Property Name="PRIV_PARCIAL" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
+          <Property Name="PUB_PARCIAL" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
+          <Property Name="COD_AMBITO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="PRIORIDAD" Type="Int32" />
+          <NavigationProperty Name="PS_SERVICIOS" Relationship="GruposEtareosModel.FK_PS_SERVICIOS_GN_CLASIFIC_CONTABLE" FromRole="GN_CLASIFIC_CONTABLE" ToRole="PS_SERVICIOS" />
+        </EntityType>
+        <EntityType Name="GN_CONCEPTOS_CONTABLES">
+          <Key>
+            <PropertyRef Name="CONCEPTO_CONTABLE" />
+          </Key>
+          <Property Name="CONCEPTO_CONTABLE" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="DESC_CONCEPTO_CONTABLE" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="TIPO_CONTRATO" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="APLICA_RECOBROS" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="APLICA_TUTELAS" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="APLICA_PREDX_ESP" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="COD_GRUPO_ACTIVIDAD" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="COD_CCONTABLE_COORD" Type="Int32" />
+          <Property Name="COD_CCONTABLE_GERSALUD" Type="Int32" />
+          <Property Name="COD_CCONTABLE_NIVELAT" Type="Int32" />
+          <Property Name="PRIORIDAD" Type="Int16" Nullable="false" />
+          <Property Name="CENTRO_COSTO" Type="String" MaxLength="18" FixedLength="true" Unicode="false" />
+          <Property Name="CENTRO_COSTO_DET" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="ESTADO_CONCEPTO" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="PS_SERVICIOS" Relationship="GruposEtareosModel.FK_PS_SERVICIOS_GN_CONCEPTOS_CONTABLES" FromRole="GN_CONCEPTOS_CONTABLES" ToRole="PS_SERVICIOS" />
+        </EntityType>
+        <EntityType Name="GN_TIPO_SERVICIOS">
+          <Key>
+            <PropertyRef Name="COD_TIPO_SERVICIO" />
+          </Key>
+          <Property Name="COD_TIPO_SERVICIO" Type="Int16" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EQU_CIRCULAR55" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="EQU_RECFOSYGA" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="EQU_INTERFAZ" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="RES_1683" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="GN_TIPO_TECNOLOGIA" Relationship="GruposEtareosModel.FK_COD_GN_TIPO_TECNOLOGIA_GN_TIPO_SERVICIOS" FromRole="GN_TIPO_SERVICIOS" ToRole="GN_TIPO_TECNOLOGIA" />
+          <NavigationProperty Name="PS_SERVICIOS" Relationship="GruposEtareosModel.FK_PS_SERVICIOS_GN_TIPO_SERVICIOS" FromRole="GN_TIPO_SERVICIOS" ToRole="PS_SERVICIOS" />
+        </EntityType>
+        <EntityType Name="GRUPO">
+          <Key>
+            <PropertyRef Name="COD_GRUPO" />
+          </Key>
+          <Property Name="COD_GRUPO" Type="String" Nullable="false" MaxLength="18" FixedLength="true" Unicode="false" />
+          <Property Name="DESCR_GRUPO" Type="String" MaxLength="100" FixedLength="true" Unicode="false" />
+          <Property Name="ABRE_GRUPO" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="MANUAL_TARIFARIO" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="MOSTRARCONTRATACIONARCHIVOPLANO" Type="Int32" />
+          <Property Name="MOSTRARCONTRATACION" Type="Int32" />
+          <Property Name="CARGUE_AUT_MASIVA" Type="Boolean" />
+          <NavigationProperty Name="SUB_GRUPO" Relationship="GruposEtareosModel.FK_SUB_GRUPO_GRUPO" FromRole="GRUPO" ToRole="SUB_GRUPO" />
+        </EntityType>
+        <EntityType Name="NIVEL_COMPLEJIDAD">
+          <Key>
+            <PropertyRef Name="COD_NIVEL_COMPL" />
+          </Key>
+          <Property Name="COD_NIVEL_COMPL" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="DESC_NIVEL_COMPL" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
+          <Property Name="COD_GRADO_COMPLEJIDAD" Type="Int16" />
+          <NavigationProperty Name="PS_SERVICIOS" Relationship="GruposEtareosModel.FK_PS_SERVICIOS_NIVEL_COMPLEJIDAD" FromRole="NIVEL_COMPLEJIDAD" ToRole="PS_SERVICIOS" />
+        </EntityType>
+        <EntityType Name="SUB_GRUPO">
+          <Key>
+            <PropertyRef Name="COD_SUBGRUPO" />
+            <PropertyRef Name="COD_GRUPO" />
+          </Key>
+          <Property Name="COD_SUBGRUPO" Type="String" Nullable="false" MaxLength="18" FixedLength="true" Unicode="false" />
+          <Property Name="COD_GRUPO" Type="String" Nullable="false" MaxLength="18" FixedLength="true" Unicode="false" />
+          <Property Name="DESCR_SUBGRUPO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ABRE_SUBGRUPO" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="GRUPO" Relationship="GruposEtareosModel.FK_SUB_GRUPO_GRUPO" FromRole="SUB_GRUPO" ToRole="GRUPO" />
+          <NavigationProperty Name="PS_SERVICIOS" Relationship="GruposEtareosModel.FK_PS_SERVICIOS_SUB_GRUPO" FromRole="SUB_GRUPO" ToRole="PS_SERVICIOS" />
+        </EntityType>
+        <Association Name="FK_SUB_GRUPO_GRUPO">
+          <End Type="GruposEtareosModel.GRUPO" Role="GRUPO" Multiplicity="1" />
+          <End Type="GruposEtareosModel.SUB_GRUPO" Role="SUB_GRUPO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GRUPO">
+              <PropertyRef Name="COD_GRUPO" />
+            </Principal>
+            <Dependent Role="SUB_GRUPO">
+              <PropertyRef Name="COD_GRUPO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="DIAGNOSTICO">
+          <Key>
+            <PropertyRef Name="DIAGNOSTICO1" />
+          </Key>
+          <Property Name="DIAGNOSTICO1" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="DESCR_DIAGNOSTICO" Type="String" Nullable="false" MaxLength="254" FixedLength="true" Unicode="false" />
+          <Property Name="ABREVIAT" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SEXO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="EDAD_MINIMA" Type="Int16" />
+          <Property Name="EDAD_MAXIMA" Type="Int16" />
+          <Property Name="CAPITULO" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="CATEGORIA" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="SUBCATEGORIA" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="IND_COBRO_COPAGO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="COD_ESPECIALIDAD" Type="String" Nullable="false" MaxLength="18" FixedLength="true" Unicode="false" />
+          <Property Name="COD_GRUPO_SP" Type="Int16" />
+          <Property Name="Aplica_Infrenal" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Cod_Sub_Grupo" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="SEXO1" Relationship="GruposEtareosModel.FK_DIAGNOSTICOS_SEXO" FromRole="DIAGNOSTICO" ToRole="SEXO" />
+          <NavigationProperty Name="PS_POS_CONDICIONADO" Relationship="GruposEtareosModel.FK_PS_POS_CONDICIONADO_DIAGNOSTICOS" FromRole="DIAGNOSTICO" ToRole="PS_POS_CONDICIONADO" />
+        </EntityType>
+        <EntityType Name="GN_PLANES">
+          <Key>
+            <PropertyRef Name="COD_PLAN" />
+          </Key>
+          <Property Name="COD_PLAN" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="DESC_PLAN" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="ABREVIAT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="RES_744_2012" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="COD_PLAN_NORMA" Type="Int32" />
+          <NavigationProperty Name="GN_ADMINXREGIONAL" Relationship="GruposEtareosModel.FK_ADMINXREGIONAL_PLANES" FromRole="GN_PLANES" ToRole="GN_ADMINXREGIONAL" />
+          <NavigationProperty Name="PS_DETALLE_SERVICIOS" Relationship="GruposEtareosModel.FK_PS_DETALLE_SERVICIOS_GN_PLANES" FromRole="GN_PLANES" ToRole="PS_DETALLE_SERVICIOS" />
+        </EntityType>
+        <EntityType Name="GN_TIPO_TECNOLOGIA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="COD_NORMATIVO" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="DESCRIPCION_SERVICIO" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="COD_TIPO_SERVICIO" Type="Int16" Nullable="false" />
+          <Property Name="ESTADO" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="GN_TIPO_SERVICIOS" Relationship="GruposEtareosModel.FK_COD_GN_TIPO_TECNOLOGIA_GN_TIPO_SERVICIOS" FromRole="GN_TIPO_TECNOLOGIA" ToRole="GN_TIPO_SERVICIOS" />
+          <NavigationProperty Name="PS_SERVICIOS" Relationship="GruposEtareosModel.FK_PS_SERVICIOS_GN_TIPO_TECNOLOGIA" FromRole="GN_TIPO_TECNOLOGIA" ToRole="PS_SERVICIOS" />
+        </EntityType>
+        <EntityType Name="PS_CLASIFICACION_POS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DESCRIPCION" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ESTADO" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="PS_DETALLE_SERVICIOS" Relationship="GruposEtareosModel.FK_PS_DETALLE_SERVICIOS_PS_CLASIFICACION_POS" FromRole="PS_CLASIFICACION_POS" ToRole="PS_DETALLE_SERVICIOS" />
+        </EntityType>
+        <EntityType Name="SV_ESTADO_SERVICIOS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DECRIPCION" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PS_SERVICIOS" Relationship="GruposEtareosModel.FK_PS_SERVICIOS_SV_ESTADO_SERVICIOS" FromRole="SV_ESTADO_SERVICIOS" ToRole="PS_SERVICIOS" />
+        </EntityType>
+        <EntityType Name="SV_PROFESIONAL_AUTORIZA">
+          <Key>
+            <PropertyRef Name="PROFESIONAL_AUTORIZA" />
+          </Key>
+          <Property Name="PROFESIONAL_AUTORIZA" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="DESC_PROFESIONAL_AUTORIZA" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PYP_412" Type="Boolean" />
+          <NavigationProperty Name="PS_SERVICIOS" Relationship="GruposEtareosModel.FK_PS_SERVICIOS_SV_PROFESIONAL_AUTORIZA" FromRole="SV_PROFESIONAL_AUTORIZA" ToRole="PS_SERVICIOS" />
+        </EntityType>
+        <Association Name="FK_DIAGNOSTICOS_SEXO">
+          <End Type="GruposEtareosModel.SEXO" Role="SEXO" Multiplicity="0..1" />
+          <End Type="GruposEtareosModel.DIAGNOSTICO" Role="DIAGNOSTICO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SEXO">
+              <PropertyRef Name="COD_SEXO" />
+            </Principal>
+            <Dependent Role="DIAGNOSTICO">
+              <PropertyRef Name="SEXO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_COD_GN_TIPO_TECNOLOGIA_GN_TIPO_SERVICIOS">
+          <End Type="GruposEtareosModel.GN_TIPO_SERVICIOS" Role="GN_TIPO_SERVICIOS" Multiplicity="1" />
+          <End Type="GruposEtareosModel.GN_TIPO_TECNOLOGIA" Role="GN_TIPO_TECNOLOGIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GN_TIPO_SERVICIOS">
+              <PropertyRef Name="COD_TIPO_SERVICIO" />
+            </Principal>
+            <Dependent Role="GN_TIPO_TECNOLOGIA">
+              <PropertyRef Name="COD_TIPO_SERVICIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="P_CONSULTAR_SUB_GRUPO_X_FILTRO_Result">
+          <Property Type="String" Name="cod_grupo" Nullable="false" MaxLength="18" />
+          <Property Type="String" Name="cod_subgrupo" Nullable="false" MaxLength="18" />
+          <Property Type="String" Name="descr_subgrupo" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <EntityType Name="GN_NIVEL_AUTORIZ">
+          <Key>
+            <PropertyRef Name="NIVEL_AUTORIZACION" />
+          </Key>
+          <Property Name="NIVEL_AUTORIZACION" Type="Int32" Nullable="false" />
+          <Property Name="DESC_AUTORIZACION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DESC_USUARIO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PYP_412" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="PS_CONDICIONES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DESCRIPCION" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ESTADO" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PS_POS_CONDICIONADO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_PS_GRUPOS_ETAREOS" Type="Int64" />
+          <Property Name="DIAGNOSTICO" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="CANTIDAD" Type="Int64" />
+          <Property Name="MENSAJE_INFORMATIVO" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DIAGNOSTICO1" Relationship="GruposEtareosModel.FK_PS_POS_CONDICIONADO_DIAGNOSTICOS" FromRole="PS_POS_CONDICIONADO" ToRole="DIAGNOSTICO" />
+          <NavigationProperty Name="PS_GRUPOS_ETAREOS" Relationship="GruposEtareosModel.FK_PS_POS_CONDICIONADO_PS_GRUPOS_ETAREOS" FromRole="PS_POS_CONDICIONADO" ToRole="PS_GRUPOS_ETAREOS" />
+          <NavigationProperty Name="PS_DETALLE_SERVICIOS" Relationship="GruposEtareosModel.FK_PS_DETALLE_SERVICIOS_PS_POS_CONDICIONADO" FromRole="PS_POS_CONDICIONADO" ToRole="PS_DETALLE_SERVICIOS" />
+        </EntityType>
+        <Association Name="FK_PS_POS_CONDICIONADO_DIAGNOSTICOS">
+          <End Type="GruposEtareosModel.DIAGNOSTICO" Role="DIAGNOSTICO" Multiplicity="0..1" />
+          <End Type="GruposEtareosModel.PS_POS_CONDICIONADO" Role="PS_POS_CONDICIONADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DIAGNOSTICO">
+              <PropertyRef Name="DIAGNOSTICO1" />
+            </Principal>
+            <Dependent Role="PS_POS_CONDICIONADO">
+              <PropertyRef Name="DIAGNOSTICO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PS_POS_CONDICIONADO_PS_GRUPOS_ETAREOS">
+          <End Type="GruposEtareosModel.PS_GRUPOS_ETAREOS" Role="PS_GRUPOS_ETAREOS" Multiplicity="0..1" />
+          <End Type="GruposEtareosModel.PS_POS_CONDICIONADO" Role="PS_POS_CONDICIONADO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PS_GRUPOS_ETAREOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PS_POS_CONDICIONADO">
+              <PropertyRef Name="ID_PS_GRUPOS_ETAREOS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="PS_SERVICIOS">
+          <Key>
+            <PropertyRef Name="COD_SERVICIO" />
+            <PropertyRef Name="COD_GRUPO" />
+            <PropertyRef Name="COD_SUBGRUPO" />
+          </Key>
+          <Property Name="COD_SERVICIO" Type="String" Nullable="false" MaxLength="18" FixedLength="true" Unicode="false" />
+          <Property Name="COD_GRUPO" Type="String" Nullable="false" MaxLength="18" FixedLength="true" Unicode="false" />
+          <Property Name="COD_SUBGRUPO" Type="String" Nullable="false" MaxLength="18" FixedLength="true" Unicode="false" />
+          <Property Name="DESCR_SERVICIO" Type="String" Nullable="false" MaxLength="254" FixedLength="false" Unicode="true" />
+          <Property Name="ABREVIATURA" Type="String" MaxLength="18" FixedLength="true" Unicode="false" />
+          <Property Name="COD_ENTIDAD" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="COD_CLASIF_CONTABLE" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="APLICA_ESPECIALIDAD" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="COD_CONCEPTOC_EVENTO" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="COD_CONCEPTOC_CAPITA" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="COD_ENTIDADSP" Type="String" MaxLength="18" FixedLength="false" Unicode="true" />
+          <Property Name="COMPLEJIDAD" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="REGISTRO_SANITARIO" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="COD_TIPO_SERVICIO" Type="Int16" />
+          <Property Name="ID_ESTADO_SERVICIOS" Type="Int32" />
+          <Property Name="CUM" Type="String" MaxLength="18" FixedLength="true" Unicode="false" />
+          <Property Name="OBSERVACIONES" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="FORMULA_MAGISTRAL" Type="Boolean" />
+          <Property Name="VITAL_DISPONIBLE" Type="Boolean" />
+          <Property Name="ID_TECNOLOGIA" Type="Int64" />
+          <Property Name="AUTORIZACION_RELACIONADA" Type="Boolean" />
+          <Property Name="CODIGO_IUM" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+          <Property Name="NIVEL_AUTORIZACION" Type="Int16" Nullable="false" />
+          <Property Name="EDAD_MINIMA" Type="Int16" Nullable="false" />
+          <Property Name="EDAD_MAXIMA" Type="Int16" Nullable="false" />
+          <Property Name="COD_SEXO" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="UTILIZACION_MAXIMA" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="PERIODO_UTILIZACION_MAXIMA" Type="Int32" Nullable="false" />
+          <Property Name="PERIODO_TOPE_MAXIMO" Type="Int16" Nullable="false" />
+          <Property Name="MAXIMOXORDEN" Type="Int16" Nullable="false" />
+          <Property Name="DIAS_EXPIRACION" Type="Int16" Nullable="false" />
+          <Property Name="AUTORIZACION_INICIAL" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="DIAS_MAX_AUTORIZADOS" Type="Int16" Nullable="false" />
+          <Property Name="VALOR_VARIABLE" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="REVISION_DIAGNOSTICOS" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="PROFESIONAL_AUTORIZA" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="APLICA_COPAGO" Type="Boolean" />
+          <Property Name="APLICA_CUOTAMODERADORA" Type="Boolean" />
+          <Property Name="EXCLUIRVALIDACION" Type="Boolean" />
+          <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="GN_CLASIFIC_CONTABLE" Relationship="GruposEtareosModel.FK_PS_SERVICIOS_GN_CLASIFIC_CONTABLE" FromRole="PS_SERVICIOS" ToRole="GN_CLASIFIC_CONTABLE" />
+          <NavigationProperty Name="GN_CONCEPTOS_CONTABLES" Relationship="GruposEtareosModel.FK_PS_SERVICIOS_GN_CONCEPTOS_CONTABLES" FromRole="PS_SERVICIOS" ToRole="GN_CONCEPTOS_CONTABLES" />
+          <NavigationProperty Name="GN_TIPO_SERVICIOS" Relationship="GruposEtareosModel.FK_PS_SERVICIOS_GN_TIPO_SERVICIOS" FromRole="PS_SERVICIOS" ToRole="GN_TIPO_SERVICIOS" />
+          <NavigationProperty Name="GN_TIPO_TECNOLOGIA" Relationship="GruposEtareosModel.FK_PS_SERVICIOS_GN_TIPO_TECNOLOGIA" FromRole="PS_SERVICIOS" ToRole="GN_TIPO_TECNOLOGIA" />
+          <NavigationProperty Name="NIVEL_COMPLEJIDAD" Relationship="GruposEtareosModel.FK_PS_SERVICIOS_NIVEL_COMPLEJIDAD" FromRole="PS_SERVICIOS" ToRole="NIVEL_COMPLEJIDAD" />
+          <NavigationProperty Name="SEXO" Relationship="GruposEtareosModel.FK_PS_SERVICIOS_SEXO" FromRole="PS_SERVICIOS" ToRole="SEXO" />
+          <NavigationProperty Name="SUB_GRUPO" Relationship="GruposEtareosModel.FK_PS_SERVICIOS_SUB_GRUPO" FromRole="PS_SERVICIOS" ToRole="SUB_GRUPO" />
+          <NavigationProperty Name="SV_ESTADO_SERVICIOS" Relationship="GruposEtareosModel.FK_PS_SERVICIOS_SV_ESTADO_SERVICIOS" FromRole="PS_SERVICIOS" ToRole="SV_ESTADO_SERVICIOS" />
+          <NavigationProperty Name="SV_PROFESIONAL_AUTORIZA" Relationship="GruposEtareosModel.FK_PS_SERVICIOS_SV_PROFESIONAL_AUTORIZA" FromRole="PS_SERVICIOS" ToRole="SV_PROFESIONAL_AUTORIZA" />
+          <NavigationProperty Name="PS_DETALLE_SERVICIOS" Relationship="GruposEtareosModel.FK_PS_DETALLE_SERVICIOS_PS_SERVICIOS" FromRole="PS_SERVICIOS" ToRole="PS_DETALLE_SERVICIOS" />
+        </EntityType>
+        <Association Name="FK_PS_SERVICIOS_GN_CLASIFIC_CONTABLE">
+          <End Type="GruposEtareosModel.GN_CLASIFIC_CONTABLE" Role="GN_CLASIFIC_CONTABLE" Multiplicity="1" />
+          <End Type="GruposEtareosModel.PS_SERVICIOS" Role="PS_SERVICIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GN_CLASIFIC_CONTABLE">
+              <PropertyRef Name="COD_CLASIF_CONTABLE" />
+            </Principal>
+            <Dependent Role="PS_SERVICIOS">
+              <PropertyRef Name="COD_CLASIF_CONTABLE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PS_SERVICIOS_GN_CONCEPTOS_CONTABLES">
+          <End Type="GruposEtareosModel.GN_CONCEPTOS_CONTABLES" Role="GN_CONCEPTOS_CONTABLES" Multiplicity="1" />
+          <End Type="GruposEtareosModel.PS_SERVICIOS" Role="PS_SERVICIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GN_CONCEPTOS_CONTABLES">
+              <PropertyRef Name="CONCEPTO_CONTABLE" />
+            </Principal>
+            <Dependent Role="PS_SERVICIOS">
+              <PropertyRef Name="COD_CONCEPTOC_EVENTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PS_SERVICIOS_GN_TIPO_SERVICIOS">
+          <End Type="GruposEtareosModel.GN_TIPO_SERVICIOS" Role="GN_TIPO_SERVICIOS" Multiplicity="0..1" />
+          <End Type="GruposEtareosModel.PS_SERVICIOS" Role="PS_SERVICIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GN_TIPO_SERVICIOS">
+              <PropertyRef Name="COD_TIPO_SERVICIO" />
+            </Principal>
+            <Dependent Role="PS_SERVICIOS">
+              <PropertyRef Name="COD_TIPO_SERVICIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PS_SERVICIOS_GN_TIPO_TECNOLOGIA">
+          <End Type="GruposEtareosModel.GN_TIPO_TECNOLOGIA" Role="GN_TIPO_TECNOLOGIA" Multiplicity="0..1" />
+          <End Type="GruposEtareosModel.PS_SERVICIOS" Role="PS_SERVICIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GN_TIPO_TECNOLOGIA">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PS_SERVICIOS">
+              <PropertyRef Name="ID_TECNOLOGIA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PS_SERVICIOS_NIVEL_COMPLEJIDAD">
+          <End Type="GruposEtareosModel.NIVEL_COMPLEJIDAD" Role="NIVEL_COMPLEJIDAD" Multiplicity="1" />
+          <End Type="GruposEtareosModel.PS_SERVICIOS" Role="PS_SERVICIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NIVEL_COMPLEJIDAD">
+              <PropertyRef Name="COD_NIVEL_COMPL" />
+            </Principal>
+            <Dependent Role="PS_SERVICIOS">
+              <PropertyRef Name="COMPLEJIDAD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PS_SERVICIOS_SEXO">
+          <End Type="GruposEtareosModel.SEXO" Role="SEXO" Multiplicity="1" />
+          <End Type="GruposEtareosModel.PS_SERVICIOS" Role="PS_SERVICIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SEXO">
+              <PropertyRef Name="COD_SEXO" />
+            </Principal>
+            <Dependent Role="PS_SERVICIOS">
+              <PropertyRef Name="COD_SEXO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PS_SERVICIOS_SUB_GRUPO">
+          <End Type="GruposEtareosModel.SUB_GRUPO" Role="SUB_GRUPO" Multiplicity="1" />
+          <End Type="GruposEtareosModel.PS_SERVICIOS" Role="PS_SERVICIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SUB_GRUPO">
+              <PropertyRef Name="COD_SUBGRUPO" />
+              <PropertyRef Name="COD_GRUPO" />
+            </Principal>
+            <Dependent Role="PS_SERVICIOS">
+              <PropertyRef Name="COD_SUBGRUPO" />
+              <PropertyRef Name="COD_GRUPO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PS_SERVICIOS_SV_ESTADO_SERVICIOS">
+          <End Type="GruposEtareosModel.SV_ESTADO_SERVICIOS" Role="SV_ESTADO_SERVICIOS" Multiplicity="0..1" />
+          <End Type="GruposEtareosModel.PS_SERVICIOS" Role="PS_SERVICIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SV_ESTADO_SERVICIOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PS_SERVICIOS">
+              <PropertyRef Name="ID_ESTADO_SERVICIOS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PS_SERVICIOS_SV_PROFESIONAL_AUTORIZA">
+          <End Type="GruposEtareosModel.SV_PROFESIONAL_AUTORIZA" Role="SV_PROFESIONAL_AUTORIZA" Multiplicity="1" />
+          <End Type="GruposEtareosModel.PS_SERVICIOS" Role="PS_SERVICIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SV_PROFESIONAL_AUTORIZA">
+              <PropertyRef Name="PROFESIONAL_AUTORIZA" />
+            </Principal>
+            <Dependent Role="PS_SERVICIOS">
+              <PropertyRef Name="PROFESIONAL_AUTORIZA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="GN_ADMINXREGIONAL">
+          <Key>
+            <PropertyRef Name="COD_EPS" />
+            <PropertyRef Name="COD_REGIONAL" />
+            <PropertyRef Name="COD_PLAN" />
+          </Key>
+          <Property Name="COD_EPS" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="COD_REGIONAL" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="COD_PLAN" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="CONTRATO_MUNICIPIO" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="GN_PLANES" Relationship="GruposEtareosModel.FK_ADMINXREGIONAL_PLANES" FromRole="GN_ADMINXREGIONAL" ToRole="GN_PLANES" />
+          <NavigationProperty Name="PS_DETALLE_SERVICIOS" Relationship="GruposEtareosModel.FK_PS_DETALLE_SERVICIOS_GN_ADMINXREGIONAL" FromRole="GN_ADMINXREGIONAL" ToRole="PS_DETALLE_SERVICIOS" />
+        </EntityType>
+        <Association Name="FK_ADMINXREGIONAL_PLANES">
+          <End Type="GruposEtareosModel.GN_PLANES" Role="GN_PLANES" Multiplicity="1" />
+          <End Type="GruposEtareosModel.GN_ADMINXREGIONAL" Role="GN_ADMINXREGIONAL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GN_PLANES">
+              <PropertyRef Name="COD_PLAN" />
+            </Principal>
+            <Dependent Role="GN_ADMINXREGIONAL">
+              <PropertyRef Name="COD_PLAN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="P_PS_CONSULTAR_TIPO_TECNOLOGIA_Result">
+          <Property Type="Int64" Name="ID" Nullable="false" />
+          <Property Type="String" Name="COD_NORMATIVO" Nullable="false" MaxLength="8" />
+          <Property Type="String" Name="DESCRIPCION_SERVICIO" Nullable="false" MaxLength="500" />
+          <Property Type="Boolean" Name="ESTADO" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="PS_DETALLE_SERVICIOS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="COD_SERVICIO" Type="String" Nullable="false" MaxLength="18" FixedLength="true" Unicode="false" />
+          <Property Name="COD_GRUPO" Type="String" Nullable="false" MaxLength="18" FixedLength="true" Unicode="false" />
+          <Property Name="COD_SUBGRUPO" Type="String" Nullable="false" MaxLength="18" FixedLength="true" Unicode="false" />
+          <Property Name="COD_PLAN" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="COD_EPS" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="COD_REGIONAL" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="ID_PS_POS_CONDICIONADO" Type="Int64" />
+          <Property Name="ID_PS_CLASIFICACION_POS" Type="Int64" Nullable="false" />
+          <Property Name="COD_USUARIO" Type="String" MaxLength="18" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="GN_ADMINXREGIONAL" Relationship="GruposEtareosModel.FK_PS_DETALLE_SERVICIOS_GN_ADMINXREGIONAL" FromRole="PS_DETALLE_SERVICIOS" ToRole="GN_ADMINXREGIONAL" />
+          <NavigationProperty Name="GN_PLANES" Relationship="GruposEtareosModel.FK_PS_DETALLE_SERVICIOS_GN_PLANES" FromRole="PS_DETALLE_SERVICIOS" ToRole="GN_PLANES" />
+          <NavigationProperty Name="GN_USUARIO_SISTEMA" Relationship="GruposEtareosModel.FK_PS_DETALLE_SERVICIOS_GN_USUARIO_SISTEMA" FromRole="PS_DETALLE_SERVICIOS" ToRole="GN_USUARIO_SISTEMA" />
+          <NavigationProperty Name="PS_CLASIFICACION_POS" Relationship="GruposEtareosModel.FK_PS_DETALLE_SERVICIOS_PS_CLASIFICACION_POS" FromRole="PS_DETALLE_SERVICIOS" ToRole="PS_CLASIFICACION_POS" />
+          <NavigationProperty Name="PS_POS_CONDICIONADO" Relationship="GruposEtareosModel.FK_PS_DETALLE_SERVICIOS_PS_POS_CONDICIONADO" FromRole="PS_DETALLE_SERVICIOS" ToRole="PS_POS_CONDICIONADO" />
+          <NavigationProperty Name="PS_SERVICIOS" Relationship="GruposEtareosModel.FK_PS_DETALLE_SERVICIOS_PS_SERVICIOS" FromRole="PS_DETALLE_SERVICIOS" ToRole="PS_SERVICIOS" />
+        </EntityType>
+        <Association Name="FK_PS_DETALLE_SERVICIOS_GN_ADMINXREGIONAL">
+          <End Type="GruposEtareosModel.GN_ADMINXREGIONAL" Role="GN_ADMINXREGIONAL" Multiplicity="1" />
+          <End Type="GruposEtareosModel.PS_DETALLE_SERVICIOS" Role="PS_DETALLE_SERVICIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GN_ADMINXREGIONAL">
+              <PropertyRef Name="COD_EPS" />
+              <PropertyRef Name="COD_REGIONAL" />
+              <PropertyRef Name="COD_PLAN" />
+            </Principal>
+            <Dependent Role="PS_DETALLE_SERVICIOS">
+              <PropertyRef Name="COD_EPS" />
+              <PropertyRef Name="COD_REGIONAL" />
+              <PropertyRef Name="COD_PLAN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PS_DETALLE_SERVICIOS_GN_PLANES">
+          <End Type="GruposEtareosModel.GN_PLANES" Role="GN_PLANES" Multiplicity="1" />
+          <End Type="GruposEtareosModel.PS_DETALLE_SERVICIOS" Role="PS_DETALLE_SERVICIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GN_PLANES">
+              <PropertyRef Name="COD_PLAN" />
+            </Principal>
+            <Dependent Role="PS_DETALLE_SERVICIOS">
+              <PropertyRef Name="COD_PLAN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PS_DETALLE_SERVICIOS_GN_USUARIO_SISTEMA">
+          <End Type="GruposEtareosModel.GN_USUARIO_SISTEMA" Role="GN_USUARIO_SISTEMA" Multiplicity="0..1" />
+          <End Type="GruposEtareosModel.PS_DETALLE_SERVICIOS" Role="PS_DETALLE_SERVICIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GN_USUARIO_SISTEMA">
+              <PropertyRef Name="COD_USUARIO" />
+            </Principal>
+            <Dependent Role="PS_DETALLE_SERVICIOS">
+              <PropertyRef Name="COD_USUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PS_DETALLE_SERVICIOS_PS_CLASIFICACION_POS">
+          <End Type="GruposEtareosModel.PS_CLASIFICACION_POS" Role="PS_CLASIFICACION_POS" Multiplicity="1" />
+          <End Type="GruposEtareosModel.PS_DETALLE_SERVICIOS" Role="PS_DETALLE_SERVICIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PS_CLASIFICACION_POS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PS_DETALLE_SERVICIOS">
+              <PropertyRef Name="ID_PS_CLASIFICACION_POS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PS_DETALLE_SERVICIOS_PS_POS_CONDICIONADO">
+          <End Type="GruposEtareosModel.PS_POS_CONDICIONADO" Role="PS_POS_CONDICIONADO" Multiplicity="0..1" />
+          <End Type="GruposEtareosModel.PS_DETALLE_SERVICIOS" Role="PS_DETALLE_SERVICIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PS_POS_CONDICIONADO">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PS_DETALLE_SERVICIOS">
+              <PropertyRef Name="ID_PS_POS_CONDICIONADO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PS_DETALLE_SERVICIOS_PS_SERVICIOS">
+          <End Type="GruposEtareosModel.PS_SERVICIOS" Role="PS_SERVICIOS" Multiplicity="1" />
+          <End Type="GruposEtareosModel.PS_DETALLE_SERVICIOS" Role="PS_DETALLE_SERVICIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PS_SERVICIOS">
+              <PropertyRef Name="COD_SERVICIO" />
+              <PropertyRef Name="COD_GRUPO" />
+              <PropertyRef Name="COD_SUBGRUPO" />
+            </Principal>
+            <Dependent Role="PS_DETALLE_SERVICIOS">
+              <PropertyRef Name="COD_SERVICIO" />
+              <PropertyRef Name="COD_GRUPO" />
+              <PropertyRef Name="COD_SUBGRUPO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GruposEtareosModelStoreContainer" CdmEntityContainer="GruposEtareosEntities">
+          <EntitySetMapping Name="GN_UNIDAD_MEDIDA">
+            <EntityTypeMapping TypeName="GruposEtareosModel.GN_UNIDAD_MEDIDA">
+              <MappingFragment StoreEntitySet="GN_UNIDAD_MEDIDA">
+                <ScalarProperty Name="ID_UNIDADMEDIDA" ColumnName="ID_UNIDADMEDIDA" />
+                <ScalarProperty Name="DESC_UNIDADMEDIDA" ColumnName="DESC_UNIDADMEDIDA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SEXOes">
+            <EntityTypeMapping TypeName="GruposEtareosModel.SEXO">
+              <MappingFragment StoreEntitySet="SEXO">
+                <ScalarProperty Name="APLICA_AFILIACION" ColumnName="APLICA_AFILIACION" />
+                <ScalarProperty Name="DESC_SEXO" ColumnName="DESC_SEXO" />
+                <ScalarProperty Name="COD_SEXO" ColumnName="COD_SEXO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PS_GRUPOS_ETAREOS">
+            <EntityTypeMapping TypeName="GruposEtareosModel.PS_GRUPOS_ETAREOS">
+              <MappingFragment StoreEntitySet="PS_GRUPOS_ETAREOS">
+                <ScalarProperty Name="COD_USUARIO" ColumnName="COD_USUARIO" />
+                <ScalarProperty Name="ESTADO_GRUPOETAREO" ColumnName="ESTADO_GRUPOETAREO" />
+                <ScalarProperty Name="DESC_GRUPOETAREO" ColumnName="DESC_GRUPOETAREO" />
+                <ScalarProperty Name="ID_UNIDADMEDIDA" ColumnName="ID_UNIDADMEDIDA" />
+                <ScalarProperty Name="EDAD_MAXIMA" ColumnName="EDAD_MAXIMA" />
+                <ScalarProperty Name="EDAD_MINIMA" ColumnName="EDAD_MINIMA" />
+                <ScalarProperty Name="COD_SEXO" ColumnName="COD_SEXO" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GN_USUARIO_SISTEMA">
+            <EntityTypeMapping TypeName="GruposEtareosModel.GN_USUARIO_SISTEMA">
+              <MappingFragment StoreEntitySet="GN_USUARIO_SISTEMA">
+                <ScalarProperty Name="AUTORIZA_PGP" ColumnName="AUTORIZA_PGP" />
+                <ScalarProperty Name="ANULA_TUTELAS" ColumnName="ANULA_TUTELAS" />
+                <ScalarProperty Name="ANULA_ACTAS_CONCILIACION" ColumnName="ANULA_ACTAS_CONCILIACION" />
+                <ScalarProperty Name="COD_ROLE" ColumnName="COD_ROLE" />
+                <ScalarProperty Name="COORDINADOR_AC" ColumnName="COORDINADOR_AC" />
+                <ScalarProperty Name="MEDICO_AUDITOR" ColumnName="MEDICO_AUDITOR" />
+                <ScalarProperty Name="COD_SERVIDOR" ColumnName="COD_SERVIDOR" />
+                <ScalarProperty Name="ANULA_PRESTACIONES_ECONOMICAS" ColumnName="ANULA_PRESTACIONES_ECONOMICAS" />
+                <ScalarProperty Name="AUDITOR_FALLO_TUTELA" ColumnName="AUDITOR_FALLO_TUTELA" />
+                <ScalarProperty Name="USER_CALL_CENTER" ColumnName="USER_CALL_CENTER" />
+                <ScalarProperty Name="COD_CARGO" ColumnName="COD_CARGO" />
+                <ScalarProperty Name="Id_EstJerarquica" ColumnName="Id_EstJerarquica" />
+                <ScalarProperty Name="Atender_Caso_SNE" ColumnName="Atender_Caso_SNE" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="E_MAIL" ColumnName="E_MAIL" />
+                <ScalarProperty Name="COD_COBERTURA" ColumnName="COD_COBERTURA" />
+                <ScalarProperty Name="FIRMA" ColumnName="FIRMA" />
+                <ScalarProperty Name="ARCHIVO_FIRMA" ColumnName="ARCHIVO_FIRMA" />
+                <ScalarProperty Name="PROFESIONAL_AUTORIZA" ColumnName="PROFESIONAL_AUTORIZA" />
+                <ScalarProperty Name="COD_PLAN" ColumnName="COD_PLAN" />
+                <ScalarProperty Name="TIPO_USUARIO" ColumnName="TIPO_USUARIO" />
+                <ScalarProperty Name="COD_EPS" ColumnName="COD_EPS" />
+                <ScalarProperty Name="COD_REGIONAL" ColumnName="COD_REGIONAL" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+                <ScalarProperty Name="NIVEL_AUTORIZACION_3" ColumnName="NIVEL_AUTORIZACION_3" />
+                <ScalarProperty Name="COD_SEDE_IPS" ColumnName="COD_SEDE_IPS" />
+                <ScalarProperty Name="COD_IPS" ColumnName="COD_IPS" />
+                <ScalarProperty Name="CLAVE_USUARIO" ColumnName="CLAVE_USUARIO" />
+                <ScalarProperty Name="NOMBRE_USUARIO" ColumnName="NOMBRE_USUARIO" />
+                <ScalarProperty Name="COD_USUARIO" ColumnName="COD_USUARIO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GN_CLASIFIC_CONTABLE">
+            <EntityTypeMapping TypeName="GruposEtareosModel.GN_CLASIFIC_CONTABLE">
+              <MappingFragment StoreEntitySet="GN_CLASIFIC_CONTABLE">
+                <ScalarProperty Name="PRIORIDAD" ColumnName="PRIORIDAD" />
+                <ScalarProperty Name="COD_AMBITO" ColumnName="COD_AMBITO" />
+                <ScalarProperty Name="PUB_PARCIAL" ColumnName="PUB_PARCIAL" />
+                <ScalarProperty Name="PRIV_PARCIAL" ColumnName="PRIV_PARCIAL" />
+                <ScalarProperty Name="PRIV_EV" ColumnName="PRIV_EV" />
+                <ScalarProperty Name="PUB_CAP" ColumnName="PUB_CAP" />
+                <ScalarProperty Name="PRIV_CAP" ColumnName="PRIV_CAP" />
+                <ScalarProperty Name="DESC_CONTABLE" ColumnName="DESC_CONTABLE" />
+                <ScalarProperty Name="COD_CLASIF_CONTABLE" ColumnName="COD_CLASIF_CONTABLE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GN_CONCEPTOS_CONTABLES">
+            <EntityTypeMapping TypeName="GruposEtareosModel.GN_CONCEPTOS_CONTABLES">
+              <MappingFragment StoreEntitySet="GN_CONCEPTOS_CONTABLES">
+                <ScalarProperty Name="ESTADO_CONCEPTO" ColumnName="ESTADO_CONCEPTO" />
+                <ScalarProperty Name="CENTRO_COSTO_DET" ColumnName="CENTRO_COSTO_DET" />
+                <ScalarProperty Name="CENTRO_COSTO" ColumnName="CENTRO_COSTO" />
+                <ScalarProperty Name="PRIORIDAD" ColumnName="PRIORIDAD" />
+                <ScalarProperty Name="COD_CCONTABLE_NIVELAT" ColumnName="COD_CCONTABLE_NIVELAT" />
+                <ScalarProperty Name="COD_CCONTABLE_GERSALUD" ColumnName="COD_CCONTABLE_GERSALUD" />
+                <ScalarProperty Name="COD_CCONTABLE_COORD" ColumnName="COD_CCONTABLE_COORD" />
+                <ScalarProperty Name="COD_GRUPO_ACTIVIDAD" ColumnName="COD_GRUPO_ACTIVIDAD" />
+                <ScalarProperty Name="APLICA_PREDX_ESP" ColumnName="APLICA_PREDX_ESP" />
+                <ScalarProperty Name="APLICA_TUTELAS" ColumnName="APLICA_TUTELAS" />
+                <ScalarProperty Name="APLICA_RECOBROS" ColumnName="APLICA_RECOBROS" />
+                <ScalarProperty Name="TIPO_CONTRATO" ColumnName="TIPO_CONTRATO" />
+                <ScalarProperty Name="DESC_CONCEPTO_CONTABLE" ColumnName="DESC_CONCEPTO_CONTABLE" />
+                <ScalarProperty Name="CONCEPTO_CONTABLE" ColumnName="CONCEPTO_CONTABLE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GN_TIPO_SERVICIOS">
+            <EntityTypeMapping TypeName="GruposEtareosModel.GN_TIPO_SERVICIOS">
+              <MappingFragment StoreEntitySet="GN_TIPO_SERVICIOS">
+                <ScalarProperty Name="RES_1683" ColumnName="RES_1683" />
+                <ScalarProperty Name="EQU_INTERFAZ" ColumnName="EQU_INTERFAZ" />
+                <ScalarProperty Name="EQU_RECFOSYGA" ColumnName="EQU_RECFOSYGA" />
+                <ScalarProperty Name="EQU_CIRCULAR55" ColumnName="EQU_CIRCULAR55" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="COD_TIPO_SERVICIO" ColumnName="COD_TIPO_SERVICIO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GRUPOes">
+            <EntityTypeMapping TypeName="GruposEtareosModel.GRUPO">
+              <MappingFragment StoreEntitySet="GRUPO">
+                <ScalarProperty Name="CARGUE_AUT_MASIVA" ColumnName="CARGUE_AUT_MASIVA" />
+                <ScalarProperty Name="MOSTRARCONTRATACION" ColumnName="MOSTRARCONTRATACION" />
+                <ScalarProperty Name="MOSTRARCONTRATACIONARCHIVOPLANO" ColumnName="MOSTRARCONTRATACIONARCHIVOPLANO" />
+                <ScalarProperty Name="MANUAL_TARIFARIO" ColumnName="MANUAL_TARIFARIO" />
+                <ScalarProperty Name="ABRE_GRUPO" ColumnName="ABRE_GRUPO" />
+                <ScalarProperty Name="DESCR_GRUPO" ColumnName="DESCR_GRUPO" />
+                <ScalarProperty Name="COD_GRUPO" ColumnName="COD_GRUPO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NIVEL_COMPLEJIDAD">
+            <EntityTypeMapping TypeName="GruposEtareosModel.NIVEL_COMPLEJIDAD">
+              <MappingFragment StoreEntitySet="NIVEL_COMPLEJIDAD">
+                <ScalarProperty Name="COD_GRADO_COMPLEJIDAD" ColumnName="COD_GRADO_COMPLEJIDAD" />
+                <ScalarProperty Name="DESC_NIVEL_COMPL" ColumnName="DESC_NIVEL_COMPL" />
+                <ScalarProperty Name="COD_NIVEL_COMPL" ColumnName="COD_NIVEL_COMPL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SUB_GRUPO">
+            <EntityTypeMapping TypeName="GruposEtareosModel.SUB_GRUPO">
+              <MappingFragment StoreEntitySet="SUB_GRUPO">
+                <ScalarProperty Name="ABRE_SUBGRUPO" ColumnName="ABRE_SUBGRUPO" />
+                <ScalarProperty Name="DESCR_SUBGRUPO" ColumnName="DESCR_SUBGRUPO" />
+                <ScalarProperty Name="COD_GRUPO" ColumnName="COD_GRUPO" />
+                <ScalarProperty Name="COD_SUBGRUPO" ColumnName="COD_SUBGRUPO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DIAGNOSTICOS">
+            <EntityTypeMapping TypeName="GruposEtareosModel.DIAGNOSTICO">
+              <MappingFragment StoreEntitySet="DIAGNOSTICOS">
+                <ScalarProperty Name="Cod_Sub_Grupo" ColumnName="Cod_Sub_Grupo" />
+                <ScalarProperty Name="Aplica_Infrenal" ColumnName="Aplica_Infrenal" />
+                <ScalarProperty Name="COD_GRUPO_SP" ColumnName="COD_GRUPO_SP" />
+                <ScalarProperty Name="COD_ESPECIALIDAD" ColumnName="COD_ESPECIALIDAD" />
+                <ScalarProperty Name="IND_COBRO_COPAGO" ColumnName="IND_COBRO_COPAGO" />
+                <ScalarProperty Name="SUBCATEGORIA" ColumnName="SUBCATEGORIA" />
+                <ScalarProperty Name="CATEGORIA" ColumnName="CATEGORIA" />
+                <ScalarProperty Name="CAPITULO" ColumnName="CAPITULO" />
+                <ScalarProperty Name="EDAD_MAXIMA" ColumnName="EDAD_MAXIMA" />
+                <ScalarProperty Name="EDAD_MINIMA" ColumnName="EDAD_MINIMA" />
+                <ScalarProperty Name="SEXO" ColumnName="SEXO" />
+                <ScalarProperty Name="ABREVIAT" ColumnName="ABREVIAT" />
+                <ScalarProperty Name="DESCR_DIAGNOSTICO" ColumnName="DESCR_DIAGNOSTICO" />
+                <ScalarProperty Name="DIAGNOSTICO1" ColumnName="DIAGNOSTICO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GN_PLANES">
+            <EntityTypeMapping TypeName="GruposEtareosModel.GN_PLANES">
+              <MappingFragment StoreEntitySet="GN_PLANES">
+                <ScalarProperty Name="COD_PLAN_NORMA" ColumnName="COD_PLAN_NORMA" />
+                <ScalarProperty Name="RES_744_2012" ColumnName="RES_744_2012" />
+                <ScalarProperty Name="ABREVIAT" ColumnName="ABREVIAT" />
+                <ScalarProperty Name="DESC_PLAN" ColumnName="DESC_PLAN" />
+                <ScalarProperty Name="COD_PLAN" ColumnName="COD_PLAN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GN_TIPO_TECNOLOGIA">
+            <EntityTypeMapping TypeName="GruposEtareosModel.GN_TIPO_TECNOLOGIA">
+              <MappingFragment StoreEntitySet="GN_TIPO_TECNOLOGIA">
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+                <ScalarProperty Name="COD_TIPO_SERVICIO" ColumnName="COD_TIPO_SERVICIO" />
+                <ScalarProperty Name="DESCRIPCION_SERVICIO" ColumnName="DESCRIPCION_SERVICIO" />
+                <ScalarProperty Name="COD_NORMATIVO" ColumnName="COD_NORMATIVO" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PS_CLASIFICACION_POS">
+            <EntityTypeMapping TypeName="GruposEtareosModel.PS_CLASIFICACION_POS">
+              <MappingFragment StoreEntitySet="PS_CLASIFICACION_POS">
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SV_ESTADO_SERVICIOS">
+            <EntityTypeMapping TypeName="GruposEtareosModel.SV_ESTADO_SERVICIOS">
+              <MappingFragment StoreEntitySet="SV_ESTADO_SERVICIOS">
+                <ScalarProperty Name="DECRIPCION" ColumnName="DECRIPCION" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SV_PROFESIONAL_AUTORIZA">
+            <EntityTypeMapping TypeName="GruposEtareosModel.SV_PROFESIONAL_AUTORIZA">
+              <MappingFragment StoreEntitySet="SV_PROFESIONAL_AUTORIZA">
+                <ScalarProperty Name="PYP_412" ColumnName="PYP_412" />
+                <ScalarProperty Name="DESC_PROFESIONAL_AUTORIZA" ColumnName="DESC_PROFESIONAL_AUTORIZA" />
+                <ScalarProperty Name="PROFESIONAL_AUTORIZA" ColumnName="PROFESIONAL_AUTORIZA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="P_CONSULTAR_SUB_GRUPO_X_FILTRO" FunctionName="GruposEtareosModel.Store.P_CONSULTAR_SUB_GRUPO_X_FILTRO">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GruposEtareosModel.P_CONSULTAR_SUB_GRUPO_X_FILTRO_Result">
+                <ScalarProperty Name="cod_grupo" ColumnName="cod_grupo" />
+                <ScalarProperty Name="cod_subgrupo" ColumnName="cod_subgrupo" />
+                <ScalarProperty Name="descr_subgrupo" ColumnName="descr_subgrupo" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="GN_NIVEL_AUTORIZ">
+            <EntityTypeMapping TypeName="GruposEtareosModel.GN_NIVEL_AUTORIZ">
+              <MappingFragment StoreEntitySet="GN_NIVEL_AUTORIZ">
+                <ScalarProperty Name="PYP_412" ColumnName="PYP_412" />
+                <ScalarProperty Name="DESC_USUARIO" ColumnName="DESC_USUARIO" />
+                <ScalarProperty Name="DESC_AUTORIZACION" ColumnName="DESC_AUTORIZACION" />
+                <ScalarProperty Name="NIVEL_AUTORIZACION" ColumnName="NIVEL_AUTORIZACION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PS_CONDICIONES">
+            <EntityTypeMapping TypeName="GruposEtareosModel.PS_CONDICIONES">
+              <MappingFragment StoreEntitySet="PS_CONDICIONES">
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PS_POS_CONDICIONADO">
+            <EntityTypeMapping TypeName="GruposEtareosModel.PS_POS_CONDICIONADO">
+              <MappingFragment StoreEntitySet="PS_POS_CONDICIONADO">
+                <ScalarProperty Name="MENSAJE_INFORMATIVO" ColumnName="MENSAJE_INFORMATIVO" />
+                <ScalarProperty Name="CANTIDAD" ColumnName="CANTIDAD" />
+                <ScalarProperty Name="DIAGNOSTICO" ColumnName="DIAGNOSTICO" />
+                <ScalarProperty Name="ID_PS_GRUPOS_ETAREOS" ColumnName="ID_PS_GRUPOS_ETAREOS" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PS_SERVICIOS">
+            <EntityTypeMapping TypeName="GruposEtareosModel.PS_SERVICIOS">
+              <MappingFragment StoreEntitySet="PS_SERVICIOS">
+                <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+                <ScalarProperty Name="EXCLUIRVALIDACION" ColumnName="EXCLUIRVALIDACION" />
+                <ScalarProperty Name="APLICA_CUOTAMODERADORA" ColumnName="APLICA_CUOTAMODERADORA" />
+                <ScalarProperty Name="APLICA_COPAGO" ColumnName="APLICA_COPAGO" />
+                <ScalarProperty Name="PROFESIONAL_AUTORIZA" ColumnName="PROFESIONAL_AUTORIZA" />
+                <ScalarProperty Name="REVISION_DIAGNOSTICOS" ColumnName="REVISION_DIAGNOSTICOS" />
+                <ScalarProperty Name="VALOR_VARIABLE" ColumnName="VALOR_VARIABLE" />
+                <ScalarProperty Name="DIAS_MAX_AUTORIZADOS" ColumnName="DIAS_MAX_AUTORIZADOS" />
+                <ScalarProperty Name="AUTORIZACION_INICIAL" ColumnName="AUTORIZACION_INICIAL" />
+                <ScalarProperty Name="DIAS_EXPIRACION" ColumnName="DIAS_EXPIRACION" />
+                <ScalarProperty Name="MAXIMOXORDEN" ColumnName="MAXIMOXORDEN" />
+                <ScalarProperty Name="PERIODO_TOPE_MAXIMO" ColumnName="PERIODO_TOPE_MAXIMO" />
+                <ScalarProperty Name="PERIODO_UTILIZACION_MAXIMA" ColumnName="PERIODO_UTILIZACION_MAXIMA" />
+                <ScalarProperty Name="UTILIZACION_MAXIMA" ColumnName="UTILIZACION_MAXIMA" />
+                <ScalarProperty Name="COD_SEXO" ColumnName="COD_SEXO" />
+                <ScalarProperty Name="EDAD_MAXIMA" ColumnName="EDAD_MAXIMA" />
+                <ScalarProperty Name="EDAD_MINIMA" ColumnName="EDAD_MINIMA" />
+                <ScalarProperty Name="NIVEL_AUTORIZACION" ColumnName="NIVEL_AUTORIZACION" />
+                <ScalarProperty Name="CODIGO_IUM" ColumnName="CODIGO_IUM" />
+                <ScalarProperty Name="AUTORIZACION_RELACIONADA" ColumnName="AUTORIZACION_RELACIONADA" />
+                <ScalarProperty Name="ID_TECNOLOGIA" ColumnName="ID_TECNOLOGIA" />
+                <ScalarProperty Name="VITAL_DISPONIBLE" ColumnName="VITAL_DISPONIBLE" />
+                <ScalarProperty Name="FORMULA_MAGISTRAL" ColumnName="FORMULA_MAGISTRAL" />
+                <ScalarProperty Name="OBSERVACIONES" ColumnName="OBSERVACIONES" />
+                <ScalarProperty Name="CUM" ColumnName="CUM" />
+                <ScalarProperty Name="ID_ESTADO_SERVICIOS" ColumnName="ID_ESTADO_SERVICIOS" />
+                <ScalarProperty Name="COD_TIPO_SERVICIO" ColumnName="COD_TIPO_SERVICIO" />
+                <ScalarProperty Name="REGISTRO_SANITARIO" ColumnName="REGISTRO_SANITARIO" />
+                <ScalarProperty Name="COMPLEJIDAD" ColumnName="COMPLEJIDAD" />
+                <ScalarProperty Name="COD_ENTIDADSP" ColumnName="COD_ENTIDADSP" />
+                <ScalarProperty Name="COD_CONCEPTOC_CAPITA" ColumnName="COD_CONCEPTOC_CAPITA" />
+                <ScalarProperty Name="COD_CONCEPTOC_EVENTO" ColumnName="COD_CONCEPTOC_EVENTO" />
+                <ScalarProperty Name="APLICA_ESPECIALIDAD" ColumnName="APLICA_ESPECIALIDAD" />
+                <ScalarProperty Name="COD_CLASIF_CONTABLE" ColumnName="COD_CLASIF_CONTABLE" />
+                <ScalarProperty Name="COD_ENTIDAD" ColumnName="COD_ENTIDAD" />
+                <ScalarProperty Name="ABREVIATURA" ColumnName="ABREVIATURA" />
+                <ScalarProperty Name="DESCR_SERVICIO" ColumnName="DESCR_SERVICIO" />
+                <ScalarProperty Name="COD_SUBGRUPO" ColumnName="COD_SUBGRUPO" />
+                <ScalarProperty Name="COD_GRUPO" ColumnName="COD_GRUPO" />
+                <ScalarProperty Name="COD_SERVICIO" ColumnName="COD_SERVICIO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GN_ADMINXREGIONAL">
+            <EntityTypeMapping TypeName="GruposEtareosModel.GN_ADMINXREGIONAL">
+              <MappingFragment StoreEntitySet="GN_ADMINXREGIONAL">
+                <ScalarProperty Name="CONTRATO_MUNICIPIO" ColumnName="CONTRATO_MUNICIPIO" />
+                <ScalarProperty Name="COD_PLAN" ColumnName="COD_PLAN" />
+                <ScalarProperty Name="COD_REGIONAL" ColumnName="COD_REGIONAL" />
+                <ScalarProperty Name="COD_EPS" ColumnName="COD_EPS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="P_PS_CONSULTAR_TIPO_TECNOLOGIA" FunctionName="GruposEtareosModel.Store.P_PS_CONSULTAR_TIPO_TECNOLOGIA">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GruposEtareosModel.P_PS_CONSULTAR_TIPO_TECNOLOGIA_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="COD_NORMATIVO" ColumnName="COD_NORMATIVO" />
+                <ScalarProperty Name="DESCRIPCION_SERVICIO" ColumnName="DESCRIPCION_SERVICIO" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="PS_DETALLE_SERVICIOS">
+            <EntityTypeMapping TypeName="GruposEtareosModel.PS_DETALLE_SERVICIOS">
+              <MappingFragment StoreEntitySet="PS_DETALLE_SERVICIOS">
+                <ScalarProperty Name="COD_USUARIO" ColumnName="COD_USUARIO" />
+                <ScalarProperty Name="ID_PS_CLASIFICACION_POS" ColumnName="ID_PS_CLASIFICACION_POS" />
+                <ScalarProperty Name="ID_PS_POS_CONDICIONADO" ColumnName="ID_PS_POS_CONDICIONADO" />
+                <ScalarProperty Name="COD_REGIONAL" ColumnName="COD_REGIONAL" />
+                <ScalarProperty Name="COD_EPS" ColumnName="COD_EPS" />
+                <ScalarProperty Name="COD_PLAN" ColumnName="COD_PLAN" />
+                <ScalarProperty Name="COD_SUBGRUPO" ColumnName="COD_SUBGRUPO" />
+                <ScalarProperty Name="COD_GRUPO" ColumnName="COD_GRUPO" />
+                <ScalarProperty Name="COD_SERVICIO" ColumnName="COD_SERVICIO" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
